@@ -2,7 +2,7 @@
 const path = require('path')
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
-// Create Post Pages based on post.js template
+  // Create Post Pages based on post.js template
   const { createPage } = boundActionCreators
   return new Promise((resolve, reject) => {
     graphql(`
@@ -11,6 +11,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         edges {
           node {
             slug
+            id
           }
         }
       }

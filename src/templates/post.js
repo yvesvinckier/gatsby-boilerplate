@@ -78,9 +78,11 @@ class PostTemplate extends Component {
 
   createAnimation() {
     if (this.animation) this.animation.kill()
-    this.animation = new TimelineMax({ paused: true })
-
-      .to(this.refImage, 0.2, { y: '-=25%', scale: 1, ease: Power0.easeOut })
+    this.animation = new TimelineMax({ paused: true }).to(this.refImage, 0.2, {
+      y: '-=25%',
+      scale: 1,
+      ease: Power0.easeOut,
+    })
 
     this.animDuration = this.animation.duration()
   }
@@ -88,8 +90,8 @@ class PostTemplate extends Component {
     if (this.paragraphAnimation) this.paragraphAnimation.kill()
     this.paragraphAnimation = new TimelineMax({ paused: true })
 
-      .from(this.postCategoryWrapper, 1, {x: '-=25%', opacity: 0})
-      .from(this.postParagraphWrapper, 1, {y: '+=25%', opacity: 0}, '-=0.9')
+      .from(this.postCategoryWrapper, 1, { x: '-=25%', opacity: 0 })
+      .from(this.postParagraphWrapper, 1, { y: '+=25%', opacity: 0 }, '-=0.9')
   }
 
   updateScroll = ({ progress }) => {
@@ -139,13 +141,26 @@ class PostTemplate extends Component {
         </Helmet>
 
         <div className='post'>
-          <div className='post-title' ref={c => { this.subtitle = c }}>
+          <div
+            className='post-title'
+            ref={c => {
+              this.subtitle = c
+            }}
+          >
             <h1>
-              <span ref={c => { this.firstpostSubtitle = c }}>
+              <span
+                ref={c => {
+                  this.firstpostSubtitle = c
+                }}
+              >
                 {title}
               </span>
               <br />
-              <span ref={c => { this.secondpostSubtitle = c }}>
+              <span
+                ref={c => {
+                  this.secondpostSubtitle = c
+                }}
+              >
                 {title2}
               </span>
             </h1>
@@ -171,7 +186,12 @@ class PostTemplate extends Component {
             </div>
           </div>
           <div className='post-info'>
-            <div className='post-info__left' ref={c => { this.postCategoryWrapper = c }}>
+            <div
+              className='post-info__left'
+              ref={c => {
+                this.postCategoryWrapper = c
+              }}
+            >
               <h2 className='post-info-title'>Catégorie</h2>
               <h3 className='post-category'>
                 <Link to={'/' + author.authorSlug + '/'}>
@@ -182,18 +202,43 @@ class PostTemplate extends Component {
 
                     <span className='inner-span'>
                       <span className='first-span' />
-                      <span className='second-span'>
-                        {author.name}
-                      </span>
+                      <span className='second-span'>{author.name}</span>
                     </span>
                   </span>
                 </Link>
               </h3>
-              {postIndex.previous && (<Link className='post-previous' to={'/' + postIndex.previous.slug + '/'}>Previous</Link>)}
-              {postIndex.next && (<Link className='post-next' to={'/' + postIndex.next.slug + '/'}>Next</Link>)}
+              {postIndex.previous && (
+                <Link
+                  className='post-previous'
+                  to={'/' + postIndex.previous.slug + '/'}
+                >
+                  Previous
+                </Link>
+              )}
+              {postIndex.next && (
+                <Link
+                  className='post-next'
+                  to={'/' + postIndex.next.slug + '/'}
+                >
+                  Next
+                </Link>
+              )}
             </div>
-            <div className='post-info__right' ref={c => { this.postParagraphWrapper = c }}>
-              <div ref={c => { this.postParagraph = c }} className='post-description' dangerouslySetInnerHTML={{ __html: description.childMarkdownRemark.html }} />
+            <div
+              className='post-info__right'
+              ref={c => {
+                this.postParagraphWrapper = c
+              }}
+            >
+              <div
+                ref={c => {
+                  this.postParagraph = c
+                }}
+                className='post-description'
+                dangerouslySetInnerHTML={{
+                  __html: description.childMarkdownRemark.html,
+                }}
+              />
             </div>
           </div>
           <ul className='post-images'>
@@ -213,8 +258,15 @@ class PostTemplate extends Component {
           {postIndex.next && (
             <Link className='post-preview' to={'/' + postIndex.next.slug + '/'}>
               <h4 className='post-preview__title'>Next</h4>
-              <BgImg height={'40vh'} sizes={postIndex.next.cover.sizes} alt={postIndex.next.cover.title} title={postIndex.next.cover.title} backgroundColor={'#ffffff'} />
-            </Link>)}
+              <BgImg
+                height={'40vh'}
+                sizes={postIndex.next.cover.sizes}
+                alt={postIndex.next.cover.title}
+                title={postIndex.next.cover.title}
+                backgroundColor={'#ffffff'}
+              />
+            </Link>
+          )}
         </div>
       </div>
     )
@@ -256,13 +308,11 @@ export const pageQuery = graphql`
       }
     }
     allContentfulGallery(
-      filter: {
-        node_locale: { eq: "fr-FR" }
-      }
-      limit: 1000, 
-      sort: { fields: [date], order: DESC })  {
-      
-        edges {
+      filter: { node_locale: { eq: "fr-FR" } }
+      limit: 1000
+      sort: { fields: [date], order: DESC }
+    ) {
+      edges {
         node {
           id
         }

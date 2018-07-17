@@ -3,44 +3,76 @@
 * ------- */
 
 .contact {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro--contact {
+  width: 100%;
+  position: relative;
+  margin: 0 0 -50px 0;
+  @include bp(medium) {
+    margin: 0 0 -10vh 0;
+  }
+  div {
+    max-height: 750px;
+  }
+  h2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    z-index: 2;
+    color: white;
+    @include bp(medium) {
+      font-size: 3.75em;
+    }
   }
 
-  .intro--contact {
+  &:before {
+    content: '';
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
     width: 100%;
-    position: relative;
-    margin: 0 0 -50px 0;
-    @include bp(medium) {
-      margin: 0 0 -10vh 0;
-    }
-    div { max-height: 750px; }
-    h2 {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      font-size: 3em;
-      font-weight: bold;
-      z-index: 2;
-      color: white;
-      @include bp(medium) {
-        font-size: 3.75em;
-      }
-    }
-    &:before {
-      content: '';
-      background: rgba(0,0,0,.2);
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 100%;
-      width: 100%;
-      z-index: 1;
-    }
+    z-index: 1;
   }
+}
+
+.mail__to {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  z-index: 2;
+  color: white !important;
+  @include bp(medium) {
+    font-size: 2em;
+  }
+}
+.cell__number {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  z-index: 2;
+  color: white !important;
+  @include bp(medium) {
+    font-size: 2em;
+  }
+}

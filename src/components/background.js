@@ -14,7 +14,9 @@ const BgImg = styled(Img)`
   & > img {
     object-fit: ${props => props.fit || 'cover'} !important;
     object-position: ${props => props.position || '50% 50%'} !important;
-    font-family: 'object-fit: ${props => props.fit || 'cover'} !important; object-position: ${props => props.position || '50% 50%'} !important;'
+    font-family: 'object-fit: ${props =>
+    props.fit || 'cover'} !important; object-position: ${props =>
+  props.position || '50% 50%'} !important;'
   }
 `
 

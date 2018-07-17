@@ -18,15 +18,30 @@ const TemplateWrapper = ({ children, location }) => {
   return (
     <div id='wrapper'>
       <Helmet>
-        <title>JEAN EMMANUEL RODE Photographie - Photographe culinaire spectacle à Lille</title>
+        <title>
+          JEAN EMMANUEL RODE Photographie - Photographe culinaire spectacle à
+          Lille
+        </title>
         <link rel='icon' href={favicon} />
         <meta charSet='utf-8' />
-        <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' />
-        <meta name='description' content='JEAN EMMANUEL RODE Photographie helps clients capture special moments in culinary photography à Lille' />
-        <meta property='og:title' content='JEAN EMMANUEL RODE Photographie - Photographe culinaire spectacle à Lille' />
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'
+        />
+        <meta
+          name='description'
+          content='JEAN EMMANUEL RODE Photographie helps clients capture special moments in culinary photography à Lille'
+        />
+        <meta
+          property='og:title'
+          content='JEAN EMMANUEL RODE Photographie - Photographe culinaire spectacle à Lille'
+        />
         <meta property='og:locale' content='fr_FR' />
         <meta property='og:type' content='website' />
-        <meta property='og:site_name' content='JEAN EMMANUEL RODE Photographie' />
+        <meta
+          property='og:site_name'
+          content='JEAN EMMANUEL RODE Photographie'
+        />
         <meta property='og:url' content='http://www.rode-island.com' />
       </Helmet>
 

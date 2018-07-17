@@ -1,66 +1,80 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
 
-const CulinaireSale = ({ data }) => {
-  const posts = data.allContentfulGallery.edges
+class CulinaireSale extends Component {
+  render() {
+    const posts = this.props.data.allContentfulGallery.edges
 
-  return (
-    <div>
-      <Helmet>
-        <title>Culinaire Salé - JEAN EMMANUEL RODE Photographe LILLE</title>
-        <meta
-          name='description'
-          content='Le Culinaire Salé par JEAN EMMANUEL RODE Photographe LILLE'
-        />
-        <meta
-          property='og:title'
-          content='Culinaire Salé - JEAN EMMANUEL RODE Photographe LILLE'
-        />
-        <meta property='og:image' content={posts[0].node.cover.sizes.src} />
-        <meta property='og:image:width' content='1800' />
-        <meta property='og:image:height' content='1200' />
-        <meta
-          property='og:url'
-          content='http://www.rode-island.com/culinaire-sale/'
-        />
-      </Helmet>
+    return (
+      <div>
+        <Helmet>
+          <title>Culinaire Salé - JEAN EMMANUEL RODE Photographe LILLE</title>
+          <meta
+            name='description'
+            content='Le Culinaire Salé par JEAN EMMANUEL RODE Photographe LILLE'
+          />
+          <meta
+            property='og:title'
+            content='Culinaire Salé - JEAN EMMANUEL RODE Photographe LILLE'
+          />
+          <meta property='og:image' content={posts[0].node.cover.sizes.src} />
+          <meta property='og:image:width' content='1800' />
+          <meta property='og:image:height' content='1200' />
+          <meta
+            property='og:url'
+            content='http://www.rode-island.com/culinaire-sale/'
+          />
+        </Helmet>
 
-      <div className='category-navigation'>
-        <h2>Galeries</h2>
-        <ul className='category-navigation__links'>
-          <li>
-            <Link to='/galeries/'>All</Link>
-          </li>
-          <li>
-            <Link to='/culinaire-sucre/'>Culinaire sucré</Link>
-          </li>
-          <li>
-            <Link to='/culinaire-sale/' className='active'>
-              Culinaire salé
-            </Link>
-          </li>
-        </ul>
+        <div className='category-navigation'>
+          <h2>Galeries</h2>
+          <ul className='category-navigation__links'>
+            <li>
+              <Link to='/galeries/'>All</Link>
+            </li>
+            <li>
+              <Link to='/culinaire-sucre/'>Culinaire sucré</Link>
+            </li>
+            <li>
+              <Link to='/culinaire-sale/' className='active'>
+                Culinaire salé
+              </Link>
+            </li>
+            <li>
+              <Link to='/nature-morte-deco/'>Nature Morte | Déco</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <ul>
+            {posts.map(({ node: post, index }) => (
+              <li key={post.id} className='thumbnail-container'>
+                <h2>{post.title}</h2>
+                <Link to={'/' + post.slug + '/'}>
+                  {/* <Img
+                    sizes={post.cover.sizes}
+                    alt={post.cover.title}
+                    title={post.cover.title}
+                  /> */}
+                  <div className='thumbnail-images'>
+                    {post.images &&
+                      post.images.map((images, index) => (
+                        <div key={index} className='cell--fifth'>
+                          <Img sizes={post.images[index].sizes} />
+                        </div>
+                      ))}
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-
-      <ul className='galleries-list'>
-        {posts.map(({ node: post, index }) => (
-          <li key={post.id}>
-            <Link to={'/' + post.slug + '/'}>
-              <Img
-                sizes={post.cover.sizes}
-                alt={post.cover.title}
-                title={post.cover.title}
-                backgroundColor={'#f1f1f1'}
-              />
-              <h3>view gallery</h3>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
+    )
+  }
 }
 
 export const query = graphql`
@@ -82,6 +96,13 @@ export const query = graphql`
           category {
             name
             categorySlug
+          }
+          images {
+            title
+            description
+            sizes(maxWidth: 1800) {
+              ...GatsbyContentfulSizes_noBase64
+            }
           }
           cover {
             title

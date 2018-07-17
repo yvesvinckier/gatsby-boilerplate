@@ -3,28 +3,30 @@ import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
 
-class CulinaireSucre extends Component {
+class NatureMorteDeco extends Component {
   render() {
     const posts = this.props.data.allContentfulGallery.edges
 
     return (
       <div>
         <Helmet>
-          <title>Culinaire Sucré - JEAN EMMANUEL RODE Photographe LILLE</title>
+          <title>
+            Nature Morte | Déco - JEAN EMMANUEL RODE Photographe LILLE
+          </title>
           <meta
             name='description'
-            content='Le Culinaire Sucré par JEAN EMMANUEL RODE Photographe LILLE'
+            content='La Photographie de Nature Morte et de décoration par JEAN EMMANUEL RODE Photographe LILLE'
           />
           <meta
             property='og:title'
-            content='Culinaire Sucré - JEAN EMMANUEL RODE Photographe LILLE'
+            content='Nature Morte | Déco - JEAN EMMANUEL RODE Photographe LILLE'
           />
           <meta property='og:image' content={posts[0].node.cover.sizes.src} />
           <meta property='og:image:width' content='1800' />
           <meta property='og:image:height' content='1200' />
           <meta
             property='og:url'
-            content='http://www.rode-island.com/galeries/'
+            content='http://www.rode-island.com/nature-morte-deco/'
           />
         </Helmet>
 
@@ -35,15 +37,15 @@ class CulinaireSucre extends Component {
               <Link to='/galeries/'>All</Link>
             </li>
             <li>
-              <Link to='/culinaire-sucre/' className='active'>
-                Culinaire sucré
-              </Link>
+              <Link to='/culinaire-sucre/'>Culinaire sucré</Link>
             </li>
             <li>
               <Link to='/culinaire-sale/'>Culinaire salé</Link>
             </li>
             <li>
-              <Link to='/nature-morte-deco/'>Nature Morte | Déco</Link>
+              <Link to='/nature-morte-deco/' className='active'>
+                Nature Morte | Déco
+              </Link>
             </li>
           </ul>
         </div>
@@ -54,11 +56,6 @@ class CulinaireSucre extends Component {
               <li key={post.id} className='thumbnail-container'>
                 <h2>{post.title}</h2>
                 <Link to={'/' + post.slug + '/'}>
-                  {/* <Img
-                    sizes={post.cover.sizes}
-                    alt={post.cover.title}
-                    title={post.cover.title}
-                  /> */}
                   <div className='thumbnail-images'>
                     {post.images &&
                       post.images.map((images, index) => (
@@ -78,11 +75,11 @@ class CulinaireSucre extends Component {
 }
 
 export const query = graphql`
-  query CulinaireSucreQuery {
+  query NatureMorteDecoQuery {
     allContentfulGallery(
       filter: {
         node_locale: { eq: "fr-FR" }
-        category: { name: { eq: "Culinaire Sucré" } }
+        category: { name: { eq: "Nature Morte / déco" } }
       }
       limit: 1000
       sort: { fields: [date], order: DESC }
@@ -115,4 +112,4 @@ export const query = graphql`
     }
   }
 `
-export default CulinaireSucre
+export default NatureMorteDeco

@@ -2,14 +2,14 @@
  *  Variables *
  * ---------- */
 
- @import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
- @import url('https://fonts.googleapis.com/css?family=Bitter:400,400i,700');
- @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Bitter:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 
 //Colors
 $base: #000; // Dark Gray
 // $base: #3e3e3e;
-$grey: #9ea0a6; 
+$grey: #9ea0a6;
 $secondary: #f1f1f1; // Light Gray
 $background: #fff; // White
 
@@ -20,8 +20,16 @@ $slab: 'Bitter', serif;
 //Max Width
 $max: 1430px;
 
-
 //Nav Height
 $nav-height: 73px;
 
-// $nav-height: 80px;
+// $content-padding: 50px;
+// $header-top-margin: 3em;
+// $header-height: 45px;
+// $header-padding: calc(#{$header-top-margin} + #{$header-height});
+// $project-cover-width: 724px;
+// $project-cover-height: 320px;
+// $project-cover-perimeter: ($project-cover-width * 2) + ($project-cover-height *
+//       2);
+// $slider-breadcrumb-height: 145px;
+// $slider-breadcrumb-height-small: 122px;

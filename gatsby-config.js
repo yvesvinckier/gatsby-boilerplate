@@ -29,7 +29,7 @@ module.exports = {
       options: {
         data: '@import "~app.scss";',
         postCssPlugins: [
-          cssnext({browsers: ['last 2 versions', 'IE > 10']}),
+          cssnext({ browsers: ['last 2 versions', 'IE > 10'] }),
           cssreporter({ clearMessages: true }),
         ],
         precision: 5, // SASS default: 5

@@ -30,9 +30,11 @@ const IndexPage = ({ data }) => {
       </Helmet>
 
       <div className='intro intro--home sticky'>
-        {/* <h1><img className='logo' src={logo} /></h1> */}
+        <h1>
+          Jean-Emmanuel Rode <br /> Photography
+        </h1>
         <BgImg
-          height={'75vh'}
+          height={'100vh'}
           sizes={page.cover.sizes}
           alt={page.cover.title}
           title={page.cover.title}
@@ -45,32 +47,22 @@ const IndexPage = ({ data }) => {
             __html: page.quote.childMarkdownRemark.html,
           }}
         />
-
-        <div className='featured'>
-          <div className='featured__newest sticky'>
-            <h2>Recent Work</h2>
-            <Link to={posts[0].node.slug + '/'}>
-              <Img
-                sizes={posts[0].node.cover.sizes}
-                alt={posts[0].node.cover.title}
-                title={posts[0].node.cover.title}
-                backgroundColor={'#f1f1f1'}
-              />
-              <h3>View Gallery</h3>
-            </Link>
-          </div>
-
-          <ul className='featured__list'>
-            {posts.slice(1).map(({ node: post }) => (
-              <li key={post.id}>
+        <div className='white--bcg'>
+          <ul className='home-list'>
+            {posts.map(({ node: post }) => (
+              <li key={post.id} className=''>
                 <Link to={post.slug + '/'}>
                   <Img
+                    className=''
                     sizes={post.cover.sizes}
                     alt={post.cover.title}
                     title={post.cover.title}
                     backgroundColor={'#f1f1f1'}
                   />
-                  <h3>View Gallery</h3>
+                  {/* <h3>View Gallery</h3> */}
+
+                  <h2>{post.title}</h2>
+                  <h4>{post.author.name}</h4>
                 </Link>
               </li>
             ))}
@@ -91,6 +83,7 @@ export const query = graphql`
       edges {
         node {
           title
+          title2
           id
           slug
           date(formatString: "M.DD.YYYY")
@@ -99,6 +92,10 @@ export const query = graphql`
             sizes(maxWidth: 1920) {
               ...GatsbyContentfulSizes_noBase64
             }
+          }
+          author {
+            name
+            authorSlug
           }
         }
       }
