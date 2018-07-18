@@ -45,6 +45,12 @@ class CulinaireSale extends Component {
             <li>
               <Link to='/nature-morte-deco/'>Nature Morte | Déco</Link>
             </li>
+            <li>
+              <Link to='/spectacle/'>Spectacle</Link>
+            </li>
+            <li>
+              <Link to='/metiers/'>Métiers</Link>
+            </li>
           </ul>
         </div>
 

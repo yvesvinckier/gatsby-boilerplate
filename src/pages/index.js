@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => {
 
       <div className='intro intro--home sticky'>
         <h1>
-          Jean-Emmanuel Rode <br /> Photography
+          Jean-Emmanuel Rode <br /> Photographe
         </h1>
         <BgImg
           height={'100vh'}
