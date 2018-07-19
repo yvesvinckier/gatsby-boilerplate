@@ -24,7 +24,7 @@ class CulinaireSucre extends Component {
           <meta property='og:image:height' content='1200' />
           <meta
             property='og:url'
-            content='http://www.rode-island.com/galeries/'
+            content='http://www.rode-island.com/culinaire-sucre/'
           />
         </Helmet>
 
@@ -50,6 +50,9 @@ class CulinaireSucre extends Component {
             </li>
             <li>
               <Link to='/metiers/'>Métiers</Link>
+            </li>
+            <li>
+              <Link to='/institutionnel/'>Institutionnel</Link>
             </li>
           </ul>
         </div>

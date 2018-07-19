@@ -77,7 +77,7 @@ export const query = graphql`
   query HomeQuery {
     allContentfulGallery(
       filter: { node_locale: { eq: "fr-FR" } }
-      limit: 8
+      limit: 15
       sort: { fields: [date], order: DESC }
     ) {
       edges {

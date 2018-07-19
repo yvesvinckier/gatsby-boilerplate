@@ -36,7 +36,7 @@ class Metiers extends Component {
             </li>
             <li>
               <Link to='/culinaire-sucre/'>
-                                Culinaire sucré
+                Culinaire sucré
               </Link>
             </li>
             <li>
@@ -50,6 +50,9 @@ class Metiers extends Component {
             </li>
             <li>
               <Link to='/metiers/' className='active'>Métiers</Link>
+            </li>
+            <li>
+              <Link to='/institutionnel/'>Institutionnel</Link>
             </li>
           </ul>
         </div>
@@ -67,11 +70,11 @@ class Metiers extends Component {
                   /> */}
                   <div className='thumbnail-images'>
                     {post.images &&
-                                            post.images.map((images, index) => (
-                                              <div key={index} className='cell--fifth'>
-                                                <Img sizes={post.images[index].sizes} />
-                                              </div>
-                                            ))}
+                      post.images.map((images, index) => (
+                        <div key={index} className='cell--fifth'>
+                          <Img sizes={post.images[index].sizes} />
+                        </div>
+                      ))}
                   </div>
                 </Link>
               </li>

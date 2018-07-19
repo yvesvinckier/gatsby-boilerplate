@@ -49,6 +49,9 @@ class Spectacle extends Component {
             <li>
               <Link to='/metiers/'>Métiers</Link>
             </li>
+            <li>
+              <Link to='/institutionnel/'>Institutionnel</Link>
+            </li>
           </ul>
         </div>
 
@@ -65,11 +68,11 @@ class Spectacle extends Component {
                   /> */}
                   <div className='thumbnail-images'>
                     {post.images &&
-                                            post.images.map((images, index) => (
-                                              <div key={index} className='cell--fifth'>
-                                                <Img sizes={post.images[index].sizes} />
-                                              </div>
-                                            ))}
+                      post.images.map((images, index) => (
+                        <div key={index} className='cell--fifth'>
+                          <Img sizes={post.images[index].sizes} />
+                        </div>
+                      ))}
                   </div>
                 </Link>
               </li>

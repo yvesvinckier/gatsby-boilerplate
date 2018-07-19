@@ -53,6 +53,9 @@ class Galleries extends Component {
             <li>
               <Link to='/metiers/'>Métiers</Link>
             </li>
+            <li>
+              <Link to='/institutionnel/'>Institutionnel</Link>
+            </li>
           </ul>
         </div>
 
