@@ -255,6 +255,7 @@ class PostTemplate extends Component {
                 </li>
               ))}
           </ul>
+
           {postIndex.next && (
             <Link className='post-preview' to={'/' + postIndex.next.slug + '/'}>
               <h4 className='post-preview__title'>Next</h4>
