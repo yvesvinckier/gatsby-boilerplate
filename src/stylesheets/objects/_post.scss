@@ -14,6 +14,8 @@
   margin-bottom: 130px;
   max-width: $max;
   h1 {
+    padding-bottom: 10px;
+    width: 100%;
     font-weight: 100;
     font-size: 8vh;
     font-family: $sans;
@@ -39,19 +41,16 @@
 
 .post-cover {
   width: 100%;
-  // height: 100vh;
-  // position: relative;
-  // overflow: hidden;
   margin: 0 0 -50px 0;
   @include bp(medium) {
     margin: 0 0 -10vh 0;
-    div {
-      max-height: 750px;
-    }
+  }
+  div {
+    max-height: 750px;
   }
 }
 
-.gatsby-image-wrapper div {
+.post-cover .gatsby-image-wrapper div {
   &:before {
     content: '';
     background: rgba(0, 0, 0, 0.3);
@@ -73,17 +72,21 @@
   margin: 0 auto 2em;
   padding: 2em 1em 4em;
   @include bp(medium) {
-    padding: 0 2em;
+    // padding: 0 2em;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
   }
   .gatsby-image-outer-wrapper {
-    margin: 0 0 1em 0;
+    margin: 0 0 1em 1em;
+    height: 500px;
   }
   li {
     div {
-      height: 400px;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+      font-family: 'object-fit: cover; object-position: 50% 50%;';
     }
     position: relative;
     flex: 0 0 49.45%;
@@ -115,7 +118,7 @@
   position: relative;
   @include bp(medium) {
     padding: 3em 2em;
-    margin: 0 2em;
+    margin: 0 auto;
     width: calc(100% - 4em);
   }
 }

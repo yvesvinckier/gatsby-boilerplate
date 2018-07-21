@@ -2,23 +2,24 @@
  *  Paragraphs  *
  * ------------ */
 
- .container p {
-	// line-height: 1.75;
-	padding: 0;
-    margin: 0;
-    border: 0;
-    font-size: 16px;
-    color: $base;
-    letter-spacing: .025em;
-    line-height: 1.55556;
-    font-weight: 300;
+.container p {
+  text-align: justify;
+  line-height: 1.75;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-size: 16px;
+  color: $base;
+  letter-spacing: 0.025em;
+  font-weight: 300;
 }
 
 .container .strike {
-	text-decoration: line-through;
-	color: gray;
+  text-decoration: line-through;
+  color: gray;
 }
 
-.container strong, .container em {
-	font-weight: bold;
+.container strong,
+.container em {
+  font-weight: bold;
 }
