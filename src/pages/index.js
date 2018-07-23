@@ -29,12 +29,12 @@ const IndexPage = ({ data }) => {
         <meta property='og:image:height' content='1200' />
       </Helmet>
 
-      <div className='intro intro--home sticky'>
+      <div className="intro intro--home sticky">
         <h1>
-          Jean-Emmanuel Rode <br /> Photographe
+          Jean-Emmanuel Rode <br /> — Photographe —
         </h1>
         <BgImg
-          height={'100vh'}
+          height={'75vh'}
           sizes={page.cover.sizes}
           alt={page.cover.title}
           title={page.cover.title}

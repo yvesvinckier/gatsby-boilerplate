@@ -5,7 +5,7 @@
 //General Footer styling
 .footer {
   background: $base;
-  color: white;
+  color: #fff;
   position: relative;
   z-index: 2;
 }
@@ -42,12 +42,15 @@
 .footer__info {
   h3 {
     margin: 0 0 0.75em 0;
+    letter-spacing: 0.1em;
     a {
       color: white !important;
       text-decoration: none !important;
     }
   }
   p {
+    font-weight: 600;
+    font-size: 0.8em;
     color: lighten($base, 25%);
     line-height: 1.25 !important;
     margin-bottom: 0.75em;

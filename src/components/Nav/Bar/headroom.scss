@@ -16,8 +16,8 @@
 
 :global(.headroom--unfixed) {
   position: fixed;
-  transform: translateY(0%);
-  transition: none;
+  transform: translateY(-100%);
+  transition: 0.25 ease-out;
 }
 
 :global(.headroom--unpinned) {

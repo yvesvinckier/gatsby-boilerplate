@@ -2,24 +2,24 @@
  *   Main  *
  * ------- */
 
- * {
-    min-height: 0;
-    min-width: 0;
-    box-sizing: border-box;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+* {
+  min-height: 0;
+  min-width: 0;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 body {
-   font-size: 100%;
-   -webkit-text-size-adjust: 100%;
-   font-variant-ligatures: none;
-   -webkit-font-variant-ligatures: none;
-   text-rendering: optimizeLegibility;
-   -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased;
-   text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
-   font-weight: 400;
-   font-family: $sans;
-   color: $base;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  font-weight: 400;
+  font-family: $sans;
+  color: $base;
 }

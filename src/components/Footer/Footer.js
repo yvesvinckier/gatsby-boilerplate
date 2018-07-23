@@ -8,17 +8,17 @@ const Footer = () => (
       <section className='footer__inner'>
         <div className='footer__info'>
           <h3>
-            <Link to='/'>JEAN EMMANUEL RODE Photograhe</Link>
+            <Link to='/'>JEAN EMMANUEL RODE — Photographe</Link>
           </h3>
           <p>
             Copyright &copy; {new Date().getFullYear()} JEAN EMMANUEL RODE
-            Photograhe. All rights reserved.
+            — Photographe. All rights reserved.
           </p>
           <a
             href='https://www.contentful.com/'
             className='wordmark'
             rel='nofollow'
-            // target='_blank'
+          // target='_blank'
           >
             <img src={contentful} alt='Powered by Contentful' />
           </a>
