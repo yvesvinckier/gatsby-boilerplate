@@ -15,42 +15,44 @@
   height: $nav-height;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 0 6%;
+  padding: 0 35px;
+  // padding: 0 6%;
+  @include bp(medium) {
+    padding: 0 6%;
+  }
 }
 
 .blackcircle {
-    stroke: $base;
-    stroke-dasharray: 180;
-    height: 2rem;
-    width: 2rem;
-    margin-right:20px;
-    stroke-width: 8;
-    stroke-miterlimit: 10;
-    fill: none;
-    transition: all 1s linear;
-    transform: rotate(-90deg);
-   }
-  
+  stroke: $base;
+  stroke-dasharray: 180;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 20px;
+  stroke-width: 8;
+  stroke-miterlimit: 10;
+  fill: none;
+  transition: all 1s linear;
+  transform: rotate(-90deg);
+}
+
 .header__container a span {
-    width: 200px;
-    padding-top: 4px;
-    font-size: 13px;
-    letter-spacing: 0.05rem;
-    float: right;
-    &::first-line {
-      text-transform: uppercase;
-      font-weight:bold;
+  width: 200px;
+  padding-top: 4px;
+  font-size: 13px;
+  letter-spacing: 0.05rem;
+  float: right;
+  &::first-line {
+    text-transform: uppercase;
+    font-weight: bold;
   }
 }
 
-
 .header__container a:hover .blackcircle .path {
-    
-    animation: dash 1.5s linear;
+  animation: dash 1.5s linear;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 180;
   }
-  
-  @keyframes dash {
-    from {
-      stroke-dashoffset: 180;
-    }
-  }
+}

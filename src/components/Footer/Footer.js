@@ -8,10 +8,10 @@ const Footer = () => (
       <section className='footer__inner'>
         <div className='footer__info'>
           <h3>
-            <Link to='/'>JEAN EMMANUEL RODE — Photographe</Link>
+            <Link to='/'>JEAN EMMANUEL RODE <br /> — Photographe</Link>
           </h3>
           <p>
-            Copyright &copy; {new Date().getFullYear()} JEAN EMMANUEL RODE
+            &copy; {new Date().getFullYear()} JEAN EMMANUEL RODE
             — Photographe. All rights reserved.
           </p>
           <a
