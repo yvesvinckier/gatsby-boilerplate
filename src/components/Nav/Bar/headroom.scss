@@ -1,7 +1,7 @@
 :global(.headroom) {
   background-color: $white;
-  // border-bottom: 1px solid $border-color;
-  height: 73px;
+  border-bottom: 1px solid $border-color;
+  height: 65px;
   left: 0;
   margin: auto;
   max-width: none;
@@ -16,8 +16,8 @@
 
 :global(.headroom--unfixed) {
   position: fixed;
-  transform: translateY(-100%);
-  transition: 0.25 ease-out;
+  transform: translateY(0%);
+  transition: none;
 }
 
 :global(.headroom--unpinned) {

@@ -7,48 +7,50 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: $base;
+  background: white;
   height: 100%;
   width: 100%;
-  transform: translate3d(100%, 0, 0);
-  margin-top: $nav-height;
+  transform: translateY(100%);
+  margin-top: 64px;
   z-index: 100;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   @include bp(medium) {
-    width: 50%;
+    width: 100%;
   }
 }
 
 .site-nav {
-  padding: 5em 4em 0 1em;
-  text-align: right;
+  padding: 4em 0 0 1em;
+  text-align: center;
+
   li {
-    margin-bottom: 0.5em;
+    margin-bottom: 34px;
   }
   a {
     position: relative;
     display: inline-flex;
-    font-size: 1.250em;
+    font-size: 1.25em;
     font-weight: 700;
     text-transform: capitalize;
     text-decoration: none;
-    color: white;
+    color: $base;
+    margin-top: 10px;
+    margin-bottom: 4px;
     @include bp(medium) {
-      font-size: 1.250em;
+      font-size: 2.2em;
     }
-    
   }
   span {
-      position: absolute;
-      bottom: 0px;
-      width: 0%;
-      height: 10px;
-      left: 0px;
-      background-color: $grey;
-      opacity: .5;
-      z-index: -1;
-      transition: width 0.5s;
-      }
+    position: absolute;
+    bottom: 0px;
+    width: 0%;
+    height: 15px;
+    left: 0px;
+    background-color: $grey;
+    opacity: 0.3;
+    z-index: -1;
+    transition: width 0.5s;
+  }
 }
 
 .site-nav a:hover span {
@@ -60,8 +62,8 @@
   display: inline-block;
   height: 2rem;
   width: 2rem;
-  margin: 0 0 0 .25em;
-  fill: white;
+  margin: 0 0 0 0.25em;
+  // fill: white;
 }
 
 .site-nav a:hover .icon {
@@ -76,9 +78,9 @@
 
 //Menu Social Icons
 .site-nav .icon--facebook {
-  margin-right: -.5rem;
+  // margin-right: -0.5rem;
 }
 
 .site-nav .icon--instagram {
-  margin-right: -.25rem;
+  margin-right: -0.25rem;
 }
