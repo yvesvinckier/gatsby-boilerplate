@@ -10,23 +10,30 @@
 }
 .post-title {
   position: relative;
-  margin-top: 240px;
-  margin-bottom: 130px;
+  margin-top: 200px;
+  margin-bottom: 100px;
   max-width: $max;
+  @include bp(medium) {
+    margin-top: 240px;
+    margin-bottom: 130px;
+  }
   h1 {
-    padding-bottom: 10px;
     width: 100%;
     font-weight: 100;
-    font-size: 8vh;
+    font-size: 6vh;
     font-family: $sans;
     color: $grey;
     position: absolute;
-    bottom: 35%;
+    bottom: 25%;
     line-height: 1.15;
     left: 6%;
     margin: 0px;
     overflow: hidden;
-    // width: 85%;
+    @include bp(medium) {
+      font-size: 8vh;
+      padding-bottom: 10px;
+      bottom: 35%;
+    }
     &::first-line {
       font-weight: 300;
       color: $base;
@@ -68,7 +75,7 @@
 .post-images {
   width: 100%;
   max-width: 1000px;
-  padding: 0 1em;
+  // padding: 0 1em;
   margin: 0 auto 2em;
   padding: 2em 1em 4em;
   @include bp(medium) {
@@ -273,7 +280,7 @@
 
 .post-preview:hover {
   div:after {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -285,19 +292,30 @@
 
 .post-preview__title {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: 400;
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  color: #fff;
+  z-index: 1;
+  transform: translate(-50%, -67%);
+  letter-spacing: 0.2em;
+}
+
+.post-preview__next {
+  font-size: 1.6em;
+  font-weight: 700;
   text-transform: capitalize;
   display: inline-block;
   color: $base;
   background: white;
-  padding: 0.5em;
-  border-radius: 2px;
+  padding: 0.4em;
   margin: 0 auto;
   mix-blend-mode: screen;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   z-index: 1;
 }
 

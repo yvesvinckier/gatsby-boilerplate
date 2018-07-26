@@ -177,7 +177,7 @@ class PostTemplate extends Component {
               }}
             >
               <BgImg
-                height={'100vh'}
+                height={'90vh'}
                 sizes={cover.sizes}
                 alt={cover.title}
                 title={cover.title}
@@ -207,7 +207,7 @@ class PostTemplate extends Component {
                   </span>
                 </Link>
               </h3>
-              {postIndex.previous && (
+              {/* {postIndex.previous && (
                 <Link
                   className='post-previous'
                   to={'/' + postIndex.previous.slug + '/'}
@@ -222,7 +222,7 @@ class PostTemplate extends Component {
                 >
                   Next
                 </Link>
-              )}
+              )} */}
             </div>
             <div
               className='post-info__right'
@@ -258,9 +258,10 @@ class PostTemplate extends Component {
 
           {postIndex.next && (
             <Link className='post-preview' to={'/' + postIndex.next.slug + '/'}>
-              <h4 className='post-preview__title'>Next</h4>
+              <h4 className='post-preview__next'>Next</h4>
+              <h3 className='post-preview__title'>— {postIndex.next.title} —</h3>
               <BgImg
-                height={'40vh'}
+                height={'50vh'}
                 sizes={postIndex.next.cover.sizes}
                 alt={postIndex.next.cover.title}
                 title={postIndex.next.cover.title}
