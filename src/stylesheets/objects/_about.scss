@@ -14,7 +14,7 @@
   padding: 1em;
   max-width: 500px;
   flex-direction: row;
-  // justify-content: center;
+  justify-content: center;
   background: $base;
   color: #fff;
   @include bp(medium) {

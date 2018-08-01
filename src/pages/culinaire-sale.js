@@ -24,7 +24,7 @@ class CulinaireSale extends Component {
           <meta property='og:image:height' content='1200' />
           <meta
             property='og:url'
-            content='http://www.rode-island.com/culinaire-sale/'
+            content='https://www.jeanemmanuelrode.com/culinaire-sale/'
           />
         </Helmet>
 

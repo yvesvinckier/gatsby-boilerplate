@@ -24,7 +24,7 @@ class Instit extends Component {
           <meta property='og:image:height' content='1200' />
           <meta
             property='og:url'
-            content='http://www.rode-island.com/institutionnel/'
+            content='https://www.jeanemmanuelrode.com/institutionnel/'
           />
         </Helmet>
 
@@ -36,7 +36,7 @@ class Instit extends Component {
             </li>
             <li>
               <Link to='/culinaire-sucre/'>
-                                Culinaire sucré
+                Culinaire sucré
               </Link>
             </li>
             <li>
@@ -70,11 +70,11 @@ class Instit extends Component {
                   /> */}
                   <div className='thumbnail-images'>
                     {post.images &&
-                                            post.images.map((images, index) => (
-                                              <div key={index} className='cell--fifth'>
-                                                <Img sizes={post.images[index].sizes} />
-                                              </div>
-                                            ))}
+                      post.images.map((images, index) => (
+                        <div key={index} className='cell--fifth'>
+                          <Img sizes={post.images[index].sizes} />
+                        </div>
+                      ))}
                   </div>
                 </Link>
               </li>

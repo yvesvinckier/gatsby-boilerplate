@@ -26,7 +26,7 @@ class NatureMorteDeco extends Component {
           <meta property='og:image:height' content='1200' />
           <meta
             property='og:url'
-            content='http://www.rode-island.com/nature-morte-deco/'
+            content='https://www.jeanemmanuelrode.com/nature-morte-deco/'
           />
         </Helmet>
 

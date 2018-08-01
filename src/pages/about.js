@@ -39,7 +39,7 @@ const About = ({ data }) => {
         <title>A propos de JEAN EMMANUEL RODE PHOTOGRAPHE</title>
         <meta
           name='description'
-          content='En savoir plus sur JEAN EMMANUEL RODE - Photographe'
+          content='En savoir plus sur JEAN-EMMANUEL RODE - Photographe'
         />
         <meta
           property='og:title'
@@ -48,7 +48,7 @@ const About = ({ data }) => {
         <meta property='og:image' content={aboutImages[0].sizes.src} />
         <meta property='og:image:width' content='800' />
         <meta property='og:image:height' content='1000' />
-        <meta property='og:url' content='http://www.rode-island.com/about/' />
+        <meta property='og:url' content='https://www.jeanemmanuelrode.com/about/' />
       </Helmet>
       <div className='black--bcg'>
         <div className='grid--about'>

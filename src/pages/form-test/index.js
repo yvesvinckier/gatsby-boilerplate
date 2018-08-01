@@ -33,12 +33,12 @@ class FormTestPage extends React.Component {
           <meta property='og:image:height' content='1200' />
           <meta
             property='og:url'
-            content='http://www.rode-island.com/contact/'
+            content='https://www.jeanemmanuelrode.com/contact/'
           />
         </Helmet>
 
         <div className='intro--contact'>
-          <h2>Say —Hello</h2>
+          <h2>Contact</h2>
 
           <a className='mail__to' href='mailto:rodejeanemmanuel@gmail.com'>
             rodejeanemmanuel@gmail.com

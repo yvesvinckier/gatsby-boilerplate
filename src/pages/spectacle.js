@@ -24,7 +24,7 @@ class Spectacle extends Component {
           <meta property='og:image:height' content='1200' />
           <meta
             property='og:url'
-            content='http://www.rode-island.com/spectacle/'
+            content='https://www.jeanemmanuelrode.com/spectacle/'
           />
         </Helmet>
 

@@ -35,7 +35,7 @@ const Footer = () => (
               <Link to='/galeries/'>Galeries</Link>
             </li>
             <li>
-              <Link to='/contact/'>Contact</Link>
+              <Link to='/form-test/'>Contact</Link>
             </li>
           </ul>
           <ul>

@@ -270,6 +270,7 @@ class PostTemplate extends Component {
             </Link>
           )}
         </div>
+        {/* <Up /> */}
       </div>
     )
   }
