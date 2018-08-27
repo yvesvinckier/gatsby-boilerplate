@@ -46,10 +46,11 @@ export default class Hamburger extends PureComponent {
     const { onClick } = this.props
     return (
       <button className='hamburger__container' onClick={onClick}>
+        <span className="toggle__label">Menu</span>
         <div className='hamburger__burger'>
-          <span className='hamburger__bar' ref={this.refName('top')} />
+          <span ref={this.refName('top')} />
           {/* <span className='hamburger__bar' ref={this.refName('middle')} /> */}
-          <span className='hamburger__bar' ref={this.refName('bottom')} />
+          <span ref={this.refName('bottom')} />
         </div>
       </button>
     )
