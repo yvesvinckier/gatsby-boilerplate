@@ -244,7 +244,7 @@ class PostTemplate extends Component {
           <ul className='post-images'>
             {images &&
               images.map((images, index) => (
-                <li key={index} className='cell--half'>
+                <li key={index}>
                   <Img
                     sizes={images.sizes}
                     alt={images.title}
