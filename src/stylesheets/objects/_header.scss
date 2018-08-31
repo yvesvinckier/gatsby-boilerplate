@@ -53,15 +53,15 @@
     font-weight: 700;
   }
 }
-.toggle__label {
-  max-width: 0;
-  padding: 0;
-  opacity: 0;
-  display: none;
-  @include bp(medium) {
-    display: block;
-  }
-}
+// .toggle__label {
+//   max-width: 0;
+//   padding: 0;
+//   opacity: 0;
+//   display: none;
+//   @include bp(medium) {
+//     display: block;
+//   }
+// }
 
 .header__container a:hover .blackcircle .path {
   animation: dash 1.5s linear;
