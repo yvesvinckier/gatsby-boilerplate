@@ -16,6 +16,7 @@ const IndexPage = ({ data }) => {
           JEAN EMMANUEL RODE Photographie - Photographe culinaire spectacle à
           Lille
         </title>
+        <meta name="google-site-verification" content="3_QVQNywYcGd65HQI0H3kfQ-aYAcApOU3de4I4cEwK4" />
         <meta
           name='description'
           content='JEAN EMMANUEL RODE Photographie helps clients capture special moments in culinary photography à Lille'
