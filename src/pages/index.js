@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
         <meta name="google-site-verification" content="3_QVQNywYcGd65HQI0H3kfQ-aYAcApOU3de4I4cEwK4" />
         <meta
           name='description'
-          content='JEAN EMMANUEL RODE Photographie helps clients capture special moments in culinary photography à Lille'
+          content='Jean Emmanuel RODE - Photographe à Lille spécialisé en culinaire, nature morte, décoration, institutionnel et événementiel'
         />
         <meta
           property='og:title'
