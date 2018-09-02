@@ -5,8 +5,7 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: config.name,
-    siteUrl: config.url,
+    siteUrl: `https://www.jeanemmanuelrode.com/`,
   },
   plugins: [
     // Turn on offline before deploy
@@ -42,12 +41,6 @@ module.exports = {
         color: `tomato`,
         // Disable the loading spinner.
         showSpinner: true,
-      },
-    },
-    {
-      resolve: `gatsby-google-analytics-custom`,
-      options: {
-        trackingId: config.googleAnalytics,
       },
     },
     `gatsby-transformer-sharp`,
