@@ -12,12 +12,12 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-react-next`,
-    'gatsby-transformer-remark',
-    'gatsby-plugin-resolve-src',
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-resolve-src`,
     `gatsby-plugin-sitemap`,
-    'gatsby-plugin-sharp',
+    `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-source-contentful',
+      resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
