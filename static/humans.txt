@@ -1,7 +1,6 @@
 /* SITE */
-  TODO Site Name / Company
-  TODO SITE URL.com
-  Last update: YYYY/MM/DD
+  JEAN EMMANUEL RODE / JEAN EMMANUEL RODE - PHOTOGRAPHE 
+  https://www.jeanemmanuelrode.com/
   Doctype: HTML5
   Stack: React, Redux, SCSS, Webpack, Babel
 

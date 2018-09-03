@@ -33,7 +33,7 @@ export default class BaseHelmet extends PureComponent {
           { name: 'og:url', content: this.url },
           { name: 'og:site_name', content: config.name },
           { name: 'og:type', content: 'website' },
-          { name: 'og:local', content: 'en_US' },
+          { name: 'og:local', content: 'fr_FR' },
           { name: 'og:image', content: config.logo },
 
           { name: 'twitter:title', content: title },
