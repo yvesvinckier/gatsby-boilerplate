@@ -29,13 +29,13 @@ const Footer = () => (
               <Link to='/'>Home</Link>
             </li>
             <li>
-              <Link to='/about/'>About</Link>
+              <Link to='/about'>About</Link>
             </li>
             <li>
-              <Link to='/galeries/'>Galeries</Link>
+              <Link to='/galeries'>Galeries</Link>
             </li>
             <li>
-              <Link to='/form-test/'>Contact</Link>
+              <Link to='/form-test'>Contact</Link>
             </li>
           </ul>
           <ul>

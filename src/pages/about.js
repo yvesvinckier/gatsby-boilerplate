@@ -48,7 +48,7 @@ const About = ({ data }) => {
         <meta property='og:image' content={aboutImages[0].sizes.src} />
         <meta property='og:image:width' content='800' />
         <meta property='og:image:height' content='1000' />
-        <meta property='og:url' content='https://www.jeanemmanuelrode.com/about/' />
+        <meta property='og:url' content='https://www.jeanemmanuelrode.com/about' />
       </Helmet>
       <div className='black--bcg'>
         <div className='grid--about'>

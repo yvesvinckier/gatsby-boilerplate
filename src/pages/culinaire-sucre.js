@@ -24,7 +24,7 @@ class CulinaireSucre extends Component {
           <meta property='og:image:height' content='1200' />
           <meta
             property='og:url'
-            content='https://www.jeanemmanuelrode.com/culinaire-sucre/'
+            content='https://www.jeanemmanuelrode.com/culinaire-sucre'
           />
         </Helmet>
 

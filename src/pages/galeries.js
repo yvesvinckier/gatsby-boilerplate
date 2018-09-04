@@ -26,7 +26,7 @@ class Galleries extends Component {
           <meta property='og:image:height' content='1200' />
           <meta
             property='og:url'
-            content='https://www.jeanemmanuelrode.com/galeries/'
+            content='https://www.jeanemmanuelrode.com/galeries'
           />
         </Helmet>
 

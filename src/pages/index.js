@@ -13,8 +13,7 @@ const IndexPage = ({ data }) => {
     <div>
       <Helmet>
         <title>
-          JEAN EMMANUEL RODE - Photographe culinaire, nature morte, décoration, institutionnel et événementiel à
-          Lille
+          JEAN EMMANUEL RODE - PHOTOGRAPHE LILLE NORD 59 - culinaire, nature morte, décoration, institutionnel.
         </title>
         <meta name="google-site-verification" content="3_QVQNywYcGd65HQI0H3kfQ-aYAcApOU3de4I4cEwK4" />
         <meta

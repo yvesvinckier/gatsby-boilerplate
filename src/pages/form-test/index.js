@@ -19,7 +19,7 @@ class FormTestPage extends React.Component {
     return (
       <div className='contact'>
         <Helmet>
-          <title>Contacter - JEAN EMMANUEL RODE PHOTOGRAPHE</title>
+          <title>Contacter - JEAN EMMANUEL RODE PHOTOGRAPHE </title>
           <meta
             name='description'
             content='Prenez contact avec JEAN EMMANUEL RODE PHOTOGRAPHE '
@@ -33,7 +33,7 @@ class FormTestPage extends React.Component {
           <meta property='og:image:height' content='1200' />
           <meta
             property='og:url'
-            content='https://www.jeanemmanuelrode.com/contact/'
+            content='https://www.jeanemmanuelrode.com/contact'
           />
         </Helmet>
 
