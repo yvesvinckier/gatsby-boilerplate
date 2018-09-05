@@ -2,9 +2,9 @@
   "nav": {
     "links": [
       { "text": "Home", "to": "/" },
-      { "text": "About", "to": "/about" },
-      { "text": "Galeries", "to": "/galeries" },
-      { "text": "Contact", "to": "/form-test" }
+      { "text": "About", "to": "/about/" },
+      { "text": "Galeries", "to": "/galeries/" },
+      { "text": "Contact", "to": "/contact/" }
     ]
   }
 }

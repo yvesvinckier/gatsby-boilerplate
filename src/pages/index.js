@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import BgImg from '../components/background'
-// import logo from '../images/logo.svg'
 import Helmet from 'react-helmet'
 
 const IndexPage = ({ data }) => {
@@ -12,27 +11,28 @@ const IndexPage = ({ data }) => {
   return (
     <div>
       <Helmet>
-        <title>
-          JEAN EMMANUEL RODE - PHOTOGRAPHE LILLE NORD 59 - culinaire, nature morte, décoration, institutionnel.
-        </title>
         <meta name="google-site-verification" content="3_QVQNywYcGd65HQI0H3kfQ-aYAcApOU3de4I4cEwK4" />
+        <title>
+          PHOTOGRAPHE LILLE NORD 59 | CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE
+        </title>
         <meta
           name='description'
-          content='Jean Emmanuel RODE - Photographe à Lille spécialisé en culinaire, nature morte, décoration, institutionnel et événementiel.'
+          content='Jean Emmanuel RODE - Photographe à Lille spécialisé en culinaire, nature morte, décoration, institutionnel et spectacle.'
         />
         <meta
           property='og:title'
-          content='JEAN EMMANUEL RODE - Photographe culinaire, nature morte, décoration, institutionnel et événementiel à Lille.'
+          content='PHOTOGRAPHE CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE - LILLE NORD 59'
         />
         <meta property='og:image' content={page.cover.sizes.src} />
-        <meta property='og:image:width' content='1920' />
+        <meta property='og:image:width' content='1800' />
         <meta property='og:image:height' content='1200' />
+        <link rel='canonical' href='https://www.jeanemmanuelrode.com/' />
       </Helmet>
 
       <div className='intro intro--home sticky'>
-        <h1>
+        <h3>
           Jean-Emmanuel Rode <br /> — Photographe —
-        </h1>
+        </h3>
         <BgImg
           height={'75vh'}
           sizes={page.cover.sizes}
@@ -89,7 +89,7 @@ export const query = graphql`
           date(formatString: "M.DD.YYYY")
           cover {
             title
-            sizes(maxWidth: 1920) {
+            sizes(maxWidth: 1800) {
               ...GatsbyContentfulSizes_noBase64
             }
           }
@@ -106,7 +106,7 @@ export const query = graphql`
       id
       cover {
         title
-        sizes(maxWidth: 1920) {
+        sizes(maxWidth: 1800) {
           ...GatsbyContentfulSizes_noBase64
         }
       }
