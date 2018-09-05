@@ -106,7 +106,7 @@ export const query = graphql`
       id
       cover {
         title
-        sizes(maxWidth: 800) {
+        sizes(maxWidth: 1800) {
           ...GatsbyContentfulSizes_noBase64
         }
       }
