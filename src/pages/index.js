@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => {
       <Helmet>
         <meta name="google-site-verification" content="3_QVQNywYcGd65HQI0H3kfQ-aYAcApOU3de4I4cEwK4" />
         <title>
-          PHOTOGRAPHE LILLE NORD 59 | CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE
+          PHOTOGRAPHE LILLE | CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE
         </title>
         <meta
           name='description'
@@ -106,7 +106,7 @@ export const query = graphql`
       id
       cover {
         title
-        sizes(maxWidth: 1800) {
+        sizes(maxWidth: 800) {
           ...GatsbyContentfulSizes_noBase64
         }
       }
