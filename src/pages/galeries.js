@@ -11,15 +11,15 @@ class Galleries extends Component {
       <div>
         <Helmet>
           <title>
-            Toutes les Galeries - JEAN EMMANUEL RODE Photographe LILLE
+            Les Galeries - JEAN EMMANUEL RODE Photographe LILLE
           </title>
           <meta
             name='description'
-            content='Voir toutes les galeries par JEAN EMMANUEL RODE Photographe LILLE'
+            content='Toutes les galeries par JEAN EMMANUEL RODE Photographe LILLE'
           />
           <meta
             property='og:title'
-            content='Toutes les Galeries - JEAN EMMANUEL RODE Photographe LILLE'
+            content='Les Galeries - JEAN EMMANUEL RODE Photographe LILLE'
           />
           <meta property='og:image' content={posts[0].node.cover.sizes.src} />
           <meta property='og:image:width' content='1800' />
@@ -31,30 +31,30 @@ class Galleries extends Component {
         </Helmet>
 
         <div className='category-navigation'>
-          <h2>Galeries</h2>
+          <h1>Galeries</h1>
           <ul className='category-navigation__links'>
             <li>
-              <Link to='/galeries/' className='active'>
+              <Link to='/galeries' className='active'>
                 All
               </Link>
             </li>
             <li>
-              <Link to='/culinaire-sucre/'>Culinaire sucré</Link>
+              <Link to='/culinaire-sucre'>Culinaire sucré</Link>
             </li>
             <li>
-              <Link to='/culinaire-sale/'>Culinaire salé</Link>
+              <Link to='/culinaire-sale'>Culinaire salé</Link>
             </li>
             <li>
-              <Link to='/nature-morte-deco/'>Nature Morte | Déco</Link>
+              <Link to='/nature-morte-deco'>Nature Morte | Déco</Link>
             </li>
             <li>
-              <Link to='/spectacle/'>Spectacle</Link>
+              <Link to='/spectacle'>Spectacle</Link>
             </li>
             <li>
-              <Link to='/metiers/'>Métiers</Link>
+              <Link to='/metiers'>Métiers</Link>
             </li>
             <li>
-              <Link to='/institutionnel/'>Institutionnel</Link>
+              <Link to='/institutionnel'>Institutionnel</Link>
             </li>
           </ul>
         </div>
@@ -104,13 +104,13 @@ export const query = graphql`
           images {
             title
             description
-            sizes(maxWidth: 1800) {
+            sizes(maxWidth: 400) {
               ...GatsbyContentfulSizes_noBase64
             }
           }
           cover {
             title
-            sizes(maxWidth: 1920) {
+            sizes(maxWidth: 1800) {
               ...GatsbyContentfulSizes_noBase64
             }
           }

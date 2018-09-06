@@ -19,8 +19,7 @@ const TemplateWrapper = ({ children, location }) => {
     <div id='wrapper'>
       <Helmet>
         <title>
-          JEAN EMMANUEL RODE Photographie - Photographe culinaire spectacle à
-          Lille
+        PHOTOGRAPHE LILLE | CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE
         </title>
         <link rel='icon' href={favicon} />
         <meta charSet='utf-8' />
@@ -30,11 +29,11 @@ const TemplateWrapper = ({ children, location }) => {
         />
         <meta
           name='description'
-          content='Photographe Culinaire à Lille - JEAN-EMMANUEL RODE, professionnel spécialisé en photographie culinaire, nature morte, décoration, corporate et institutionnel.'
+          content='Jean Emmanuel RODE - Photographe à Lille spécialisé en culinaire, nature morte, décoration, institutionnel et spectacle.'
         />
         <meta
           property='og:title'
-          content='JEAN-EMMANUEL RODE Photographie - Photographe culinaire spectacle nature morte décoration corporate et institutionnel à Lille'
+          content='Jean Emmanuel RODE - Photographe à Lille spécialisé en culinaire, nature morte, décoration, institutionnel et spectacle.'
         />
         <meta property='og:locale' content='fr_FR' />
         <meta property='og:type' content='website' />

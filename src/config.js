@@ -1,9 +1,9 @@
-var PHONE = ['TODO', 'TODO', 'TODO']
-var EMAIL = 'TODO'
+var PHONE = ['+33', '6', '34', '11', '31', '94']
+var EMAIL = 'rodejeanemmanuel@gmail.com'
 
 var config = {
-  meta_title: 'JEAN-EMMANUEL RODE Photographe',
-  meta_description: 'Jean Emmanuel RODE - Photographe à Lille spécialisé en culinaire, nature morte, décoration, institutionnel et événementiel.',
+  meta_title: 'PHOTOGRAPHE LILLE | CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE',
+  meta_description: 'Jean Emmanuel RODE - Photographe à Lille spécialisé en culinaire, nature morte, décoration, institutionnel et spectacle.',
 
   // Required info for schema
   email: EMAIL,
@@ -17,11 +17,11 @@ var config = {
   address: {
     street: '56 Rue des Martyrs de la Résistance',
     city: 'Marquette-lez-Lille',
-    state: 'TODO',
+    // state: 'TODO',
     zipcode: '59520',
-    directions: 'TODO',
+    // directions: 'TODO',
     country: 'France',
-    area: '',
+    area: 'NORD',
   },
 
   // Useful adds

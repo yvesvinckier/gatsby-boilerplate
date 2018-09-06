@@ -290,14 +290,14 @@ export const pageQuery = graphql`
       }
       cover {
         title
-        sizes(maxWidth: 1920) {
+        sizes(maxWidth: 1800) {
           ...GatsbyContentfulSizes_noBase64
         }
       }
       images {
         title
         description
-        sizes(maxWidth: 1800) {
+        sizes(maxWidth: 900) {
           ...GatsbyContentfulSizes_noBase64
         }
       }

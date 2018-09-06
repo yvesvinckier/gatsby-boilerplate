@@ -36,14 +36,14 @@ const About = ({ data }) => {
   return (
     <div>
       <Helmet>
-        <title>A propos de JEAN EMMANUEL RODE PHOTOGRAPHE</title>
+        <title>A propos de JEAN EMMANUEL RODE PHOTOGRAPHE à Lille</title>
         <meta
           name='description'
-          content='En savoir plus sur JEAN-EMMANUEL RODE - Photographe'
+          content='En savoir plus sur JEAN-EMMANUEL RODE - Photographe à Lille'
         />
         <meta
           property='og:title'
-          content='A propos de JEAN EMMANUEL RODE PHOTOGRAPHE'
+          content='A propos de JEAN EMMANUEL RODE PHOTOGRAPHE à lille'
         />
         <meta property='og:image' content={aboutImages[0].sizes.src} />
         <meta property='og:image:width' content='800' />
@@ -56,9 +56,9 @@ const About = ({ data }) => {
           <svg className='whitecircle' x='0px' y='0px' viewBox='0 0 45 45'>
             <circle className='path' cx='22.5' cy='22.5' r='18.5' />
           </svg>
-          <h2>
-            Jean-Emmanuel <br />Rode{' '}
-          </h2>
+          <h1>
+            Jean-Emmanuel <br />Rode
+          </h1>
           <div className='small__line' />
           <div
             className='bio'

@@ -29,30 +29,30 @@ class CulinaireSucre extends Component {
         </Helmet>
 
         <div className='category-navigation'>
-          <h2>Galeries</h2>
+          <h1>Galeries</h1>
           <ul className='category-navigation__links'>
             <li>
-              <Link to='/galeries/'>All</Link>
+              <Link to='/galeries'>All</Link>
             </li>
             <li>
-              <Link to='/culinaire-sucre/' className='active'>
+              <Link to='/culinaire-sucre' className='active'>
                 Culinaire sucré
               </Link>
             </li>
             <li>
-              <Link to='/culinaire-sale/'>Culinaire salé</Link>
+              <Link to='/culinaire-sale'>Culinaire salé</Link>
             </li>
             <li>
-              <Link to='/nature-morte-deco/'>Nature Morte | Déco</Link>
+              <Link to='/nature-morte-deco'>Nature Morte | Déco</Link>
             </li>
             <li>
-              <Link to='/spectacle/'>Spectacle</Link>
+              <Link to='/spectacle'>Spectacle</Link>
             </li>
             <li>
-              <Link to='/metiers/'>Métiers</Link>
+              <Link to='/metiers'>Métiers</Link>
             </li>
             <li>
-              <Link to='/institutionnel/'>Institutionnel</Link>
+              <Link to='/institutionnel'>Institutionnel</Link>
             </li>
           </ul>
         </div>
@@ -109,13 +109,13 @@ export const query = graphql`
           images {
             title
             description
-            sizes(maxWidth: 1800) {
+            sizes(maxWidth: 400) {
               ...GatsbyContentfulSizes_noBase64
             }
           }
           cover {
             title
-            sizes(maxWidth: 1920) {
+            sizes(maxWidth: 1800) {
               ...GatsbyContentfulSizes_noBase64
             }
           }

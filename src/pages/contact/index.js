@@ -19,14 +19,14 @@ class FormTestPage extends React.Component {
     return (
       <div className='contact'>
         <Helmet>
-          <title>Contacter - JEAN EMMANUEL RODE PHOTOGRAPHE </title>
+          <title>Contact - JEAN EMMANUEL RODE PHOTOGRAPHE à Lille </title>
           <meta
             name='description'
-            content='Prenez contact avec JEAN EMMANUEL RODE PHOTOGRAPHE '
+            content='Contacter JEAN EMMANUEL RODE PHOTOGRAPHE à Lille'
           />
           <meta
             property='og:title'
-            content='Contacter - JEAN EMMANUEL RODE PHOTOGRAPHE'
+            content='Contact - JEAN EMMANUEL RODE PHOTOGRAPHE'
           />
           <meta property='og:image' content={page.cover.sizes.src} />
           <meta property='og:image:width' content='1920' />
@@ -38,7 +38,7 @@ class FormTestPage extends React.Component {
         </Helmet>
 
         <div className='intro--contact'>
-          <h2>Contact</h2>
+          <h1>Contact</h1>
 
           <a className='mail__to' href='mailto:rodejeanemmanuel@gmail.com'>
             rodejeanemmanuel@gmail.com
