@@ -17,11 +17,11 @@ var config = {
   address: {
     street: '56 Rue des Martyrs de la Résistance',
     city: 'Marquette-lez-Lille',
-    // state: 'TODO',
+    state: 'NORD',
     zipcode: '59520',
     // directions: 'TODO',
     country: 'France',
-    area: 'NORD',
+    // area: 'NORD',
   },
 
   // Useful adds
@@ -37,7 +37,7 @@ var config = {
   // twitter_id: '',
 
   // Analytics codes
-  googleAnalytics: 'UA-TODO-XX',
+  // googleAnalytics: 'UA-TODO-XX',
 
   // Font codes
   typekit: '',

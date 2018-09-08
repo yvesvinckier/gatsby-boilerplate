@@ -89,7 +89,7 @@ export const query = graphql`
           date(formatString: "M.DD.YYYY")
           cover {
             title
-            sizes(maxWidth: 1800) {
+            sizes(maxWidth: 600) {
               ...GatsbyContentfulSizes_noBase64
             }
           }
