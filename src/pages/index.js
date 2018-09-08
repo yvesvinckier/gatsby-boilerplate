@@ -26,7 +26,6 @@ const IndexPage = ({ data }) => {
         <meta property='og:image' content={page.cover.sizes.src} />
         <meta property='og:image:width' content='1800' />
         <meta property='og:image:height' content='1200' />
-        <link rel='canonical' href='https://www.jeanemmanuelrode.com/' />
       </Helmet>
 
       <div className='intro intro--home sticky'>
