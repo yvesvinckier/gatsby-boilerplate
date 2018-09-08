@@ -21,11 +21,12 @@ export default function Schema(props) {
             'telephone': config.phone,
           },
           'email': config.email,
-        {/* 'logo': config.logo, */ }
-        'name': config.name,
+          'logo': config.logo,
+          'name': config.name,
           'legalName': config.legal_name,
           'url': config.url,
-      })}}
-/>
+        })
+      }}
+    />
   )
 }
