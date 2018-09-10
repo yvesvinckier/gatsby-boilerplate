@@ -126,7 +126,7 @@ class PostTemplate extends Component {
       <div>
         <Helmet>
           <title>{title} - JEAN EMMANUEL RODE PHOTOGRAPHE LILLE</title>
-          <meta name='description' content={title} />
+          <meta name='description' content={title + '-' + author.name} />
           <meta
             property='og:title'
             content={title + ' - JEAN EMMANUEL RODE PHOTOGRAPHE LILLE'}
@@ -136,7 +136,7 @@ class PostTemplate extends Component {
           <meta property='og:image:height' content='1200' />
           <meta
             property='og:url'
-            content={'https://www.jeanemmanuelrode.com/' + slug + '-' + author.name}
+            content={'https://www.jeanemmanuelrode.com/' + slug}
           />
         </Helmet>
 
