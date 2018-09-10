@@ -136,7 +136,7 @@ class PostTemplate extends Component {
           <meta property='og:image:height' content='1200' />
           <meta
             property='og:url'
-            content={'https://www.jeanemmanuelrode.com/' + slug}
+            content={'https://www.jeanemmanuelrode.com/' + slug + '-' + author.name}
           />
         </Helmet>
 
