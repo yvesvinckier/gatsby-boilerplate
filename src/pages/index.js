@@ -11,9 +11,10 @@ const IndexPage = ({ data }) => {
   return (
     <div>
       <Helmet>
-        <meta name="google-site-verification" content="3_QVQNywYcGd65HQI0H3kfQ-aYAcApOU3de4I4cEwK4" />
+        <link rel='canonical' href='https://www.jeanemmanuelrode.com/' />
+        <meta name='google-site-verification' content='3_QVQNywYcGd65HQI0H3kfQ-aYAcApOU3de4I4cEwK4' />
         <title>
-          PHOTOGRAPHE LILLE | CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE
+        PHOTOGRAPHE CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE
         </title>
         <meta
           name='description'
@@ -88,7 +89,7 @@ export const query = graphql`
           date(formatString: "M.DD.YYYY")
           cover {
             title
-            sizes(maxWidth: 600) {
+            sizes(maxWidth: 1000) {
               ...GatsbyContentfulSizes_noBase64
             }
           }

@@ -19,7 +19,7 @@ const TemplateWrapper = ({ children, location }) => {
     <div id='wrapper'>
       <Helmet>
         <title>
-        PHOTOGRAPHE LILLE | CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE
+        PHOTOGRAPHE CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE
         </title>
         <link rel='icon' href={favicon} />
         <meta charSet='utf-8' />

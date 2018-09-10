@@ -2,7 +2,7 @@ var PHONE = ['+33', '6', '34', '11', '31', '94']
 var EMAIL = 'rodejeanemmanuel@gmail.com'
 
 var config = {
-  meta_title: 'PHOTOGRAPHE LILLE | CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE',
+  meta_title: 'PHOTOGRAPHE CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE',
   meta_description: 'Jean Emmanuel RODE - Photographe à Lille spécialisé en culinaire, nature morte, décoration, institutionnel et spectacle.',
 
   // Required info for schema
