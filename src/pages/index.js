@@ -12,9 +12,13 @@ const IndexPage = ({ data }) => {
     <div>
       <Helmet>
         <link rel='canonical' href='https://www.jeanemmanuelrode.com/' />
-        <meta name='google-site-verification' content='3_QVQNywYcGd65HQI0H3kfQ-aYAcApOU3de4I4cEwK4' />
+        <meta
+          name='google-site-verification'
+          content='3_QVQNywYcGd65HQI0H3kfQ-aYAcApOU3de4I4cEwK4'
+        />
         <title>
-        PHOTOGRAPHE CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE
+          PHOTOGRAPHE LILLE NORD (59) CULINAIRE|NATURE
+          MORTE|INSTITUTIONNEL|SPECTACLE
         </title>
         <meta
           name='description'
@@ -22,7 +26,7 @@ const IndexPage = ({ data }) => {
         />
         <meta
           property='og:title'
-          content='PHOTOGRAPHE CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE - LILLE NORD 59'
+          content='PHOTOGRAPHE LILLE NORD (59) CULINAIRE|NATURE MORTE|INSTITUTIONNEL|SPECTACLE'
         />
         <meta property='og:image' content={page.cover.sizes.src} />
         <meta property='og:image:width' content='1800' />

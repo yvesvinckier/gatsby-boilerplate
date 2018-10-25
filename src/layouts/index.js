@@ -19,7 +19,8 @@ const TemplateWrapper = ({ children, location }) => {
     <div id='wrapper'>
       <Helmet>
         <title>
-        PHOTOGRAPHE CULINAIRE | NATURE MORTE | DÉCO | INSTITUTIONNEL | SPECTACLE
+          PHOTOGRAPHE LILLE NORD (59) CULINAIRE|NATURE
+          MORTE|INSTITUTIONNEL|SPECTACLE
         </title>
         <link rel='icon' href={favicon} />
         <meta charSet='utf-8' />

@@ -24,7 +24,7 @@ export default class BaseHelmet extends PureComponent {
     const { title, description } = this
     return (
       <Helmet
-        htmlAttributes={{ lang: 'en' }}
+        htmlAttributes={{ lang: 'fr' }}
         title={title}
         meta={[
           { name: 'description', content: description },

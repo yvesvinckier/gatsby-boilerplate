@@ -8,17 +8,19 @@ const Footer = () => (
       <section className='footer__inner'>
         <div className='footer__info'>
           <h3>
-            <Link to='/'>JEAN EMMANUEL RODE <br /> — Photographe</Link>
+            <Link to='/'>
+              JEAN EMMANUEL RODE <br /> Photographe à Lille NORD (59)
+            </Link>
           </h3>
           <p>
-            &copy; {new Date().getFullYear()} JEAN EMMANUEL RODE
-            — Photographe. All rights reserved.
+            &copy; {new Date().getFullYear()} JEAN EMMANUEL RODE — Photographe.
+            All rights reserved.
           </p>
           <a
             href='https://www.contentful.com/'
             className='wordmark'
             rel='nofollow'
-          // target='_blank'
+            // target='_blank'
           >
             <img src={contentful} alt='Powered by Contentful' />
           </a>
