@@ -16,17 +16,14 @@ const IndexPage = ({ data }) => {
           name='google-site-verification'
           content='3_QVQNywYcGd65HQI0H3kfQ-aYAcApOU3de4I4cEwK4'
         />
-        <title>
-          PHOTOGRAPHE LILLE NORD (59) CULINAIRE|NATURE
-          MORTE|INSTITUTIONNEL|SPECTACLE
-        </title>
+        <title>Jean Emmanuel Rode Photographe à Lille</title>
         <meta
           name='description'
           content='Jean Emmanuel RODE - Photographe à Lille spécialisé en culinaire, nature morte, décoration, institutionnel et spectacle.'
         />
         <meta
           property='og:title'
-          content='PHOTOGRAPHE LILLE NORD (59) CULINAIRE|NATURE MORTE|INSTITUTIONNEL|SPECTACLE'
+          content='Jean Emmanuel Rode Photographe à Lille'
         />
         <meta property='og:image' content={page.cover.sizes.src} />
         <meta property='og:image:width' content='1800' />
@@ -34,9 +31,9 @@ const IndexPage = ({ data }) => {
       </Helmet>
 
       <div className='intro intro--home sticky'>
-        <h3>
+        <h5>
           Jean-Emmanuel Rode <br /> — Photographe —
-        </h3>
+        </h5>
         <BgImg
           height={'75vh'}
           sizes={page.cover.sizes}
@@ -51,6 +48,7 @@ const IndexPage = ({ data }) => {
             __html: page.quote.childMarkdownRemark.html,
           }}
         />
+        <h1>– Jean Emmanuel Rode, Photographe à Lille –</h1>
         <div className='white--bcg'>
           <ul className='home-list'>
             {posts.map(({ node: post }) => (

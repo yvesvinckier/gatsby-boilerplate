@@ -13,7 +13,6 @@ export default function Schema(props) {
           'address': {
             '@type': 'PostalAddress',
             'addressLocality': config.address.city,
-            'addressRegion': config.address.state,
             'postalCode': config.address.zipcode,
             'streetAddress': config.address.street,
             'addressCountry': config.address.country,
@@ -25,7 +24,7 @@ export default function Schema(props) {
           'name': config.name,
           'legalName': config.legal_name,
           'url': config.url,
-        })
+        }),
       }}
     />
   )

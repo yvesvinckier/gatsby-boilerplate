@@ -5,7 +5,7 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.jeanemmanuelrode.com`,
+    siteUrl: `https://www.jeanemmanuelrode.com/`,
   },
   plugins: [
     // Turn on offline before deploy

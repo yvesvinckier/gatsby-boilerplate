@@ -2,8 +2,7 @@ var PHONE = ['+33', '6', '34', '11', '31', '94']
 var EMAIL = 'rodejeanemmanuel@gmail.com'
 
 var config = {
-  meta_title:
-    'PHOTOGRAPHE LILLE NORD (59) CULINAIRE|NATURE MORTE|INSTITUTIONNEL|SPECTACLE',
+  meta_title: 'Jean Emmanuel Rode Photographe à Lille',
   meta_description:
     'Jean Emmanuel RODE - Photographe à Lille spécialisé en culinaire, nature morte, décoration, institutionnel et spectacle.',
 
@@ -12,16 +11,14 @@ var config = {
   logo: 'TODO',
   name: 'JEAN-EMMANUEL RODE',
   legal_name: 'JEAN-EMMANUEL RODE',
-  url: 'https://www.jeanemmanuelrode.com',
+  url: 'https://www.jeanemmanuelrode.com/',
   phone: PHONE.join('-'),
 
   // Required address object for schema
   address: {
     street: '56 Rue des Martyrs de la Résistance',
-    city: 'Marquette-lez-Lille',
-    // state: 'TODO',
+    city: 'Marquette-lez-Lille, France',
     zipcode: '59520',
-    // directions: 'TODO',
     country: 'France',
     area: 'NORD',
   },
