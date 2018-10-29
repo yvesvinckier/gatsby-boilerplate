@@ -11,7 +11,7 @@ var config = {
   logo: 'TODO',
   name: 'JEAN-EMMANUEL RODE',
   legal_name: 'JEAN-EMMANUEL RODE',
-  url: 'https://www.jeanemmanuelrode.com/',
+  url: 'https://www.jeanemmanuelrode.com',
   phone: PHONE.join('-'),
 
   // Required address object for schema
