@@ -10,14 +10,16 @@ class CulinaireSucre extends Component {
     return (
       <div>
         <Helmet>
-          <title>Culinaire Sucré - JEAN EMMANUEL RODE Photographe LILLE</title>
+          <title>
+            Jean Emmanuel Rode Photographe à Lille - Culinaire Sucré
+          </title>
           <meta
             name='description'
-            content='Le Culinaire Sucré par JEAN EMMANUEL RODE Photographe LILLE'
+            content='Jean Emmanuel Rode Photographe à Lille - Culinaire Sucré'
           />
           <meta
             property='og:title'
-            content='Culinaire Sucré - JEAN EMMANUEL RODE Photographe LILLE'
+            content='Jean Emmanuel Rode Photographe à Lille - Culinaire Sucré'
           />
           <meta property='og:image' content={posts[0].node.cover.sizes.src} />
           <meta property='og:image:width' content='1800' />
