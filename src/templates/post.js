@@ -126,7 +126,7 @@ class PostTemplate extends Component {
       <div>
         <Helmet>
           <title>{title} - JEAN EMMANUEL RODE PHOTOGRAPHE LILLE</title>
-          <meta name='description' content={title + ' - ' + author.name} />
+          <meta name='description' content={'Jean Emmanuel Rode Photographe à Lille - ' + title + ' - ' + author.name} />
           <meta
             property='og:title'
             content={title + ' - JEAN EMMANUEL RODE PHOTOGRAPHE LILLE'}
