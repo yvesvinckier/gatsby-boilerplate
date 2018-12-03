@@ -40,8 +40,8 @@ class FormTestPage extends React.Component {
         <div className='intro--contact'>
           <h1>Contact</h1>
 
-          <a className='mail__to' href='mailto:rodejeanemmanuel@gmail.com'>
-            rodejeanemmanuel@gmail.com
+          <a className='mail__to' href='mailto:jerode@9online.fr'>
+            jerode@9online.fr
           </a>
 
           <a className='cell__number' href='tel:+33634113194'>
