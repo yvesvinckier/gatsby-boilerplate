@@ -1,95 +1,80 @@
-import React, { Component } from 'react'
-import Link from 'gatsby-link'
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Helmet from 'react-helmet'
+import {
+  CategoryNavigation,
+  CategoryNavigationLinks,
+  GalleriesList,
+} from '../styles/galeries.style'
 
-class Spectacle extends Component {
+import SEO from '../components/seo'
+
+class Spectacle extends React.Component {
   render() {
     const posts = this.props.data.allContentfulGallery.edges
-
     return (
-      <div>
-        <Helmet>
-          <title>Spectacle - JEAN EMMANUEL RODE Photographe LILLE</title>
-          <meta
-            name='description'
-            content='Le Spectacle par JEAN EMMANUEL RODE Photographe LILLE'
-          />
-          <meta
-            property='og:title'
-            content='Spectacle - JEAN EMMANUEL RODE Photographe LILLE'
-          />
-          <meta property='og:image' content={posts[0].node.cover.sizes.src} />
-          <meta property='og:image:width' content='1800' />
-          <meta property='og:image:height' content='1200' />
-          <meta
-            property='og:url'
-            content='https://www.jeanemmanuelrode.com/spectacle'
-          />
-        </Helmet>
+      <>
+        <SEO
+          title="Photographies spectacle"
+          description="Le Théatre ou le Cirque : un panel de rêve, d'expressions, d'émotions, d'émerveillement. Les images font leur spectacle"
+          image={posts[0].node.cover}
+        />
+        <CategoryNavigation>
+          <h1>Spectale</h1>
+          <CategoryNavigationLinks>
+            <li>
+              <Link to="/galeries/">All</Link>
+            </li>
+            <li>
+              <Link to="/culinaire-sucre/">Culinaire sucré</Link>
+            </li>
+            <li>
+              <Link to="/culinaire-sale/">Culinaire salé</Link>
+            </li>
+            <li>
+              <Link to="/nature-morte-deco/">Nature Morte | Déco</Link>
+            </li>
+            <li>
+              <Link to="/spectacle/" className="active">
+                Spectacle
+              </Link>
+            </li>
+            <li>
+              <Link to="/metiers/">Métiers</Link>
+            </li>
+            <li>
+              <Link to="/institutionnel/">Institutionnel</Link>
+            </li>
+          </CategoryNavigationLinks>
+        </CategoryNavigation>
 
-        <div className='category-navigation'>
-          <h1>Galeries</h1>
-          <ul className='category-navigation__links'>
-            <li>
-              <Link to='/galeries'>All</Link>
+        <GalleriesList>
+          {posts.map(({ node: post, index }) => (
+            <li key={post.id}>
+              <h2>{post.title}</h2>
+              <Link to={'/' + post.slug + '/'}>
+                {post.images &&
+                  post.images.map((images, index) => (
+                    <div key={index} className="thumbnail-images">
+                      <Img fluid={post.images[index].fluid} />
+                      <h3>view gallery</h3>
+                    </div>
+                  ))}
+              </Link>
             </li>
-            <li>
-              <Link to='/culinaire-sucre'>Culinaire sucré</Link>
-            </li>
-            <li>
-              <Link to='/culinaire-sale'>Culinaire salé</Link>
-            </li>
-            <li>
-              <Link to='/nature-morte-deco'>Nature Morte | Déco</Link>
-            </li>
-            <li>
-              <Link to='/spectacle' className='active'>Spectacle</Link>
-            </li>
-            <li>
-              <Link to='/metiers'>Métiers</Link>
-            </li>
-            <li>
-              <Link to='/institutionnel'>Institutionnel</Link>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <ul>
-            {posts.map(({ node: post, index }) => (
-              <li key={post.id} className='thumbnail-container'>
-                <h2>{post.title}</h2>
-                <Link to={'/' + post.slug + '/'}>
-                  {/* <Img
-                    sizes={post.cover.sizes}
-                    alt={post.cover.title}
-                    title={post.cover.title}
-                  /> */}
-                  <div className='thumbnail-images'>
-                    {post.images &&
-                      post.images.map((images, index) => (
-                        <div key={index} className='cell--fifth'>
-                          <Img sizes={post.images[index].sizes} />
-                        </div>
-                      ))}
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+          ))}
+        </GalleriesList>
+      </>
     )
   }
 }
 
 export const query = graphql`
-  query SpectacleQuery {
+  query {
     allContentfulGallery(
       filter: {
         node_locale: { eq: "fr-FR" }
-        category: { name: { eq: "Spectacle" } }
+        category: { elemMatch: { name: { eq: "Spectacle" } } }
       }
       limit: 1000
       sort: { fields: [date], order: DESC }
@@ -107,14 +92,19 @@ export const query = graphql`
           images {
             title
             description
-            sizes(maxWidth: 400) {
-              ...GatsbyContentfulSizes_noBase64
+            fluid(maxWidth: 400) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
             }
           }
           cover {
             title
-            sizes(maxWidth: 1800) {
-              ...GatsbyContentfulSizes_noBase64
+            fluid(maxWidth: 1800) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
+            }
+            ogimg: resize(width: 1800) {
+              src
+              width
+              height
             }
           }
         }
@@ -122,4 +112,5 @@ export const query = graphql`
     }
   }
 `
+
 export default Spectacle

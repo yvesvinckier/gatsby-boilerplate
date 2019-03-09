@@ -1,112 +1,123 @@
 import React from 'react'
-// import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-// import Img from 'gatsby-image'
-// import BgImg from '../components/background'
-// import Slider from 'react-slick'
+import styled from 'styled-components'
+import { graphql } from 'gatsby'
+import SEO from '../components/seo'
 
-const About = ({ data }) => {
-  const {
-    title,
-    // id,
-    // slug,
-    aboutImages,
-    bio,
-    // pageDivider,
-    // bucketList,
-    // slider,
-  } = data.contentfulAbout
+const BlackBackgroung = styled.div`
+  position: relative;
+  width: 100%;
+  background: ${props => props.theme.colors.base};
+`
 
-  // const sliderSettings = {
-  //   infinite: true,
-  //   speed: 300,
-  //   slidesToShow: 1,
-  //   swipeToSlide: true,
-  //   draggable: false,
-  //   centerMode: true,
-  //   centerPadding: 0,
-  //   arrows: true,
-  //   touchMove: true,
-  //   dots: true,
-  //   responsive: [
-  //     { breakpoint: 640, settings: { draggable: true, arrows: false } },
-  //   ],
-  // }
+const GridAbout = styled.div`
+  text-align: center;
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 500px;
+  color: #fff;
+  @media screen and (min-width: ${props => props.theme.responsive.small}) {
+    padding: 2em;
+  }
+  h1 {
+    font-size: 45px;
+    padding-top: 70px;
+    letter-spacing: 1px;
+    font-weight: 200;
+    margin: 0 0 2rem 0;
+  }
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 80px;
+  }
+`
+
+const WhiteCricleAbout = styled.svg`
+  stroke: ${props => props.theme.colors.white};
+  height: 4rem;
+  width: 4rem;
+  stroke-width: 7;
+  fill: none;
+`
+
+const SmallLine = styled.div`
+  width: 20px;
+  height: 1px;
+  background: ${props => props.theme.colors.white};
+  border: none;
+  margin: 40px auto;
+`
+
+const Bio = styled.div`
+  padding: 0 1em;
+  margin: 2em auto;
+
+  p {
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+    line-height: 23px;
+    color: #fff;
+    margin: 0 0 2em 0;
+    text-align: justify;
+  }
+`
+
+const AboutPage = ({ data }) => {
+  // add aboutImages in curly braces
+  const { bio } = data.contentfulAbout
 
   return (
-    <div>
-      <Helmet>
-        <title>A propos de JEAN EMMANUEL RODE PHOTOGRAPHE à Lille</title>
-        <meta
-          name='description'
-          content='En savoir plus sur JEAN-EMMANUEL RODE - Photographe à Lille'
-        />
-        <meta
-          property='og:title'
-          content='A propos de JEAN EMMANUEL RODE PHOTOGRAPHE à lille'
-        />
-        <meta property='og:image' content={aboutImages[0].sizes.src} />
-        <meta property='og:image:width' content='800' />
-        <meta property='og:image:height' content='1000' />
-        <meta property='og:url' content='https://www.jeanemmanuelrode.com/about' />
-      </Helmet>
-      <div className='black--bcg'>
-        <div className='grid--about'>
+    <>
+      <SEO
+        title="À propos de"
+        description="Quand on choisit le métier de photographe, ce n’est pas forcement par hasard. On préfère être derrière que devant, montrer plutôt qu’être vu, être celui qui est dans le noir pour mettre son sujet en lumière. C’est donc avec la seule ambition de « faire du beau » que je me lève le matin."
+        // image={aboutImages[0]}
+      />
+      <BlackBackgroung>
+        <GridAbout>
           <h3>about</h3>
-          <svg className='whitecircle' x='0px' y='0px' viewBox='0 0 45 45'>
-            <circle className='path' cx='22.5' cy='22.5' r='18.5' />
-          </svg>
+          <WhiteCricleAbout x="0px" y="0px" viewBox="0 0 45 45">
+            <circle className="path" cx="22.5" cy="22.5" r="18.5" />
+          </WhiteCricleAbout>
           <h1>
-            Jean-Emmanuel <br />Rode
+            Jean-Emmanuel <br />
+            Rode
           </h1>
-          <div className='small__line' />
-          <div
-            className='bio'
+          <SmallLine />
+          <Bio
             dangerouslySetInnerHTML={{ __html: bio.childMarkdownRemark.html }}
           />
-          <div className='small__line' />
-        </div>
-      </div>
-    </div>
+          <SmallLine />
+        </GridAbout>
+      </BlackBackgroung>
+    </>
   )
 }
 
 export const query = graphql`
-  query AboutQuery {
+  query {
     contentfulAbout {
-      title
-      slug
-      id
-      aboutImages {
-        title
-        sizes(maxWidth: 1800) {
-          ...GatsbyContentfulSizes_noBase64
-        }
-      }
       bio {
         childMarkdownRemark {
           html
+          excerpt(format: PLAIN)
         }
       }
-      pageDivider {
-        title
-        sizes(maxWidth: 1800) {
-          ...GatsbyContentfulSizes_noBase64
+      aboutImages {
+        fluid(maxWidth: 1800) {
+          ...GatsbyContentfulFluid_withWebp_noBase64
         }
-      }
-      bucketList {
-        childMarkdownRemark {
-          html
-        }
-      }
-      slider {
-        title
-        sizes(maxWidth: 1800) {
-          ...GatsbyContentfulSizes_noBase64
+        ogimg: resize(width: 1800) {
+          src
+          width
+          height
         }
       }
     }
   }
 `
-
-export default About
+export default AboutPage

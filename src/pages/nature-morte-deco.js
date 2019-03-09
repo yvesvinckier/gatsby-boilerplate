@@ -1,94 +1,80 @@
-import React, { Component } from 'react'
-import Link from 'gatsby-link'
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Helmet from 'react-helmet'
+import {
+  CategoryNavigation,
+  CategoryNavigationLinks,
+  GalleriesList,
+} from '../styles/galeries.style'
 
-class NatureMorteDeco extends Component {
+import SEO from '../components/seo'
+
+class NatureMorteDeco extends React.Component {
   render() {
     const posts = this.props.data.allContentfulGallery.edges
-
     return (
-      <div>
-        <Helmet>
-          <title>
-            Nature Morte | Déco - JEAN EMMANUEL RODE Photographe LILLE
-          </title>
-          <meta
-            name='description'
-            content='La Nature Morte et la décoration par JEAN EMMANUEL RODE Photographe LILLE'
-          />
-          <meta
-            property='og:title'
-            content='Nature Morte | Déco - JEAN EMMANUEL RODE Photographe LILLE'
-          />
-          <meta property='og:image' content={posts[0].node.cover.sizes.src} />
-          <meta property='og:image:width' content='1800' />
-          <meta property='og:image:height' content='1200' />
-          <meta
-            property='og:url'
-            content='https://www.jeanemmanuelrode.com/nature-morte-deco'
-          />
-        </Helmet>
-
-        <div className='category-navigation'>
-          <h1>Galeries</h1>
-          <ul className='category-navigation__links'>
+      <>
+        <SEO
+          title="Photographies nature morte et déco"
+          description="Nature Morte | Déco. Le design, une affaire de style et comment donner vie à la nature morte"
+          image={posts[0].node.cover}
+        />
+        <CategoryNavigation>
+          <h1>Nature Morte / Déco</h1>
+          <CategoryNavigationLinks>
             <li>
-              <Link to='/galeries'>All</Link>
+              <Link to="/galeries/">All</Link>
             </li>
             <li>
-              <Link to='/culinaire-sucre'>Culinaire sucré</Link>
+              <Link to="/culinaire-sucre/">Culinaire sucré</Link>
             </li>
             <li>
-              <Link to='/culinaire-sale'>Culinaire salé</Link>
+              <Link to="/culinaire-sale/">Culinaire salé</Link>
             </li>
             <li>
-              <Link to='/nature-morte-deco' className='active'>
+              <Link to="/nature-morte-deco/" className="active">
                 Nature Morte | Déco
               </Link>
             </li>
             <li>
-              <Link to='/spectacle'>Spectacle</Link>
+              <Link to="/spectacle/">Spectacle</Link>
             </li>
             <li>
-              <Link to='/metiers'>Métiers</Link>
+              <Link to="/metiers/">Métiers</Link>
             </li>
             <li>
-              <Link to='/institutionnel'>Institutionnel</Link>
+              <Link to="/institutionnel/">Institutionnel</Link>
             </li>
-          </ul>
-        </div>
+          </CategoryNavigationLinks>
+        </CategoryNavigation>
 
-        <div>
-          <ul>
-            {posts.map(({ node: post, index }) => (
-              <li key={post.id} className='thumbnail-container'>
-                <h2>{post.title}</h2>
-                <Link to={'/' + post.slug + '/'}>
-                  <div className='thumbnail-images'>
-                    {post.images &&
-                      post.images.map((images, index) => (
-                        <div key={index} className='cell--fifth'>
-                          <Img sizes={post.images[index].sizes} />
-                        </div>
-                      ))}
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+        <GalleriesList>
+          {posts.map(({ node: post, index }) => (
+            <li key={post.id}>
+              <h2>{post.title}</h2>
+              <Link to={'/' + post.slug + '/'}>
+                {post.images &&
+                  post.images.map((images, index) => (
+                    <div key={index} className="thumbnail-images">
+                      <Img fluid={post.images[index].fluid} />
+                      <h3>view gallery</h3>
+                    </div>
+                  ))}
+              </Link>
+            </li>
+          ))}
+        </GalleriesList>
+      </>
     )
   }
 }
 
 export const query = graphql`
-  query NatureMorteDecoQuery {
+  query {
     allContentfulGallery(
       filter: {
         node_locale: { eq: "fr-FR" }
-        category: { name: { eq: "Nature Morte / déco" } }
+        category: { elemMatch: { name: { eq: "Nature Morte / déco" } } }
       }
       limit: 1000
       sort: { fields: [date], order: DESC }
@@ -106,14 +92,19 @@ export const query = graphql`
           images {
             title
             description
-            sizes(maxWidth: 400) {
-              ...GatsbyContentfulSizes_noBase64
+            fluid(maxWidth: 400) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
             }
           }
           cover {
             title
-            sizes(maxWidth: 1800) {
-              ...GatsbyContentfulSizes_noBase64
+            fluid(maxWidth: 1800) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
+            }
+            ogimg: resize(width: 1800) {
+              src
+              width
+              height
             }
           }
         }
@@ -121,4 +112,5 @@ export const query = graphql`
     }
   }
 `
+
 export default NatureMorteDeco

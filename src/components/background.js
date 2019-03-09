@@ -8,15 +8,12 @@ const BgImg = styled(Img)`
   width: 100%;
   z-index: -1;
   height: auto;
-  @media (min-width: 40em) {
+  @media screen and (min-width: ${props => props.theme.responsive.small}) {
     height: ${props => props.height || 'auto'};
   }
   & > img {
     object-fit: ${props => props.fit || 'cover'} !important;
     object-position: ${props => props.position || '50% 50%'} !important;
-    font-family: 'object-fit: ${props =>
-    props.fit || 'cover'} !important; object-position: ${props =>
-  props.position || '50% 50%'} !important;'
   }
 `
 

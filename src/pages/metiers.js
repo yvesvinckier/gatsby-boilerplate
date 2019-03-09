@@ -1,97 +1,80 @@
-import React, { Component } from 'react'
-import Link from 'gatsby-link'
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Helmet from 'react-helmet'
+import {
+  CategoryNavigation,
+  CategoryNavigationLinks,
+  GalleriesList,
+} from '../styles/galeries.style'
 
-class Metiers extends Component {
+import SEO from '../components/seo'
+
+class Metiers extends React.Component {
   render() {
     const posts = this.props.data.allContentfulGallery.edges
-
     return (
-      <div>
-        <Helmet>
-          <title>Métiers - JEAN EMMANUEL RODE Photographe LILLE</title>
-          <meta
-            name='description'
-            content='Les Métiers par JEAN EMMANUEL RODE Photographe LILLE'
-          />
-          <meta
-            property='og:title'
-            content='Métiers - JEAN EMMANUEL RODE Photographe LILLE'
-          />
-          <meta property='og:image' content={posts[0].node.cover.sizes.src} />
-          <meta property='og:image:width' content='1800' />
-          <meta property='og:image:height' content='1200' />
-          <meta
-            property='og:url'
-            content='https://www.jeanemmanuelrode.com/metiers'
-          />
-        </Helmet>
-
-        <div className='category-navigation'>
-          <h1>Galeries</h1>
-          <ul className='category-navigation__links'>
+      <>
+        <SEO
+          title="Photographies métiers"
+          description="Un geste parfait, de toute beauté, chaque métier possède ses propres gestes. Repérer les gestes des femmes et des hommes au travail (ephad, entrepôts, usines, restaurants, magasins, chantiers…), c’est ce qui raconte le mieux un métier."
+          image={posts[0].node.cover}
+        />
+        <CategoryNavigation>
+          <h1>Métiers</h1>
+          <CategoryNavigationLinks>
             <li>
-              <Link to='/galeries'>All</Link>
+              <Link to="/galeries/">All</Link>
             </li>
             <li>
-              <Link to='/culinaire-sucre'>
-                Culinaire sucré
+              <Link to="/culinaire-sucre/">Culinaire sucré</Link>
+            </li>
+            <li>
+              <Link to="/culinaire-sale/">Culinaire salé</Link>
+            </li>
+            <li>
+              <Link to="/nature-morte-deco/">Nature Morte | Déco</Link>
+            </li>
+            <li>
+              <Link to="/spectacle/">Spectacle</Link>
+            </li>
+            <li>
+              <Link to="/metiers/" className="active">
+                Métiers
               </Link>
             </li>
             <li>
-              <Link to='/culinaire-sale'>Culinaire salé</Link>
+              <Link to="/institutionnel/">Institutionnel</Link>
             </li>
-            <li>
-              <Link to='/nature-morte-deco'>Nature Morte | Déco</Link>
-            </li>
-            <li>
-              <Link to='/spectacle'>Spectacle</Link>
-            </li>
-            <li>
-              <Link to='/metiers' className='active'>Métiers</Link>
-            </li>
-            <li>
-              <Link to='/institutionnel'>Institutionnel</Link>
-            </li>
-          </ul>
-        </div>
+          </CategoryNavigationLinks>
+        </CategoryNavigation>
 
-        <div>
-          <ul>
-            {posts.map(({ node: post, index }) => (
-              <li key={post.id} className='thumbnail-container'>
-                <h2>{post.title}</h2>
-                <Link to={'/' + post.slug + '/'}>
-                  {/* <Img
-                    sizes={post.cover.sizes}
-                    alt={post.cover.title}
-                    title={post.cover.title}
-                  /> */}
-                  <div className='thumbnail-images'>
-                    {post.images &&
-                      post.images.map((images, index) => (
-                        <div key={index} className='cell--fifth'>
-                          <Img sizes={post.images[index].sizes} />
-                        </div>
-                      ))}
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+        <GalleriesList>
+          {posts.map(({ node: post, index }) => (
+            <li key={post.id}>
+              <h2>{post.title}</h2>
+              <Link to={'/' + post.slug + '/'}>
+                {post.images &&
+                  post.images.map((images, index) => (
+                    <div key={index} className="thumbnail-images">
+                      <Img fluid={post.images[index].fluid} />
+                      <h3>view gallery</h3>
+                    </div>
+                  ))}
+              </Link>
+            </li>
+          ))}
+        </GalleriesList>
+      </>
     )
   }
 }
 
 export const query = graphql`
-  query MetiersQuery {
+  query {
     allContentfulGallery(
       filter: {
         node_locale: { eq: "fr-FR" }
-        category: { name: { eq: "Métiers" } }
+        category: { elemMatch: { name: { eq: "Métiers" } } }
       }
       limit: 1000
       sort: { fields: [date], order: DESC }
@@ -109,14 +92,19 @@ export const query = graphql`
           images {
             title
             description
-            sizes(maxWidth: 400) {
-              ...GatsbyContentfulSizes_noBase64
+            fluid(maxWidth: 400) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
             }
           }
           cover {
             title
-            sizes(maxWidth: 1800) {
-              ...GatsbyContentfulSizes_noBase64
+            fluid(maxWidth: 1800) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
+            }
+            ogimg: resize(width: 1800) {
+              src
+              width
+              height
             }
           }
         }
@@ -124,4 +112,5 @@ export const query = graphql`
     }
   }
 `
+
 export default Metiers

@@ -1,21 +1,40 @@
-var cssnext = require('postcss-cssnext')
-var cssreporter = require('postcss-reporter')
-var config = require('./src/config')
-require('dotenv').config()
+require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.jeanemmanuelrode.com`,
   },
   plugins: [
-    // Turn on offline before deploy
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-react-next`,
+    'gatsby-plugin-styled-components',
     `gatsby-transformer-remark`,
-    `gatsby-plugin-resolve-src`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Jean Emmanuel Rode`,
+        short_name: `Jean Emmanuel Rode`,
+        start_url: `/`,
+        background_color: `#121212`,
+        theme_color: `#FFFFFF`,
+        display: `minimal-ui`,
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.jeanemmanuelrode.com`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: '#FFFFFF',
+        showSpinner: false,
+      },
+    },
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -23,33 +42,6 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    {
-      resolve: `gatsby-plugin-postcss-sass`,
-      options: {
-        data: '@import "~app.scss";',
-        postCssPlugins: [
-          cssnext({ browsers: ['last 2 versions', 'IE > 10'] }),
-          cssreporter({ clearMessages: true }),
-        ],
-        precision: 5, // SASS default: 5
-      },
-    },
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `tomato`,
-        // Disable the loading spinner.
-        showSpinner: true,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
+    'gatsby-plugin-netlify',
   ],
 }
