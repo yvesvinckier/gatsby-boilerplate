@@ -13,7 +13,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Jean Emmanuel Rode`,
-        short_name: `Jean Emmanuel Rode`,
+        short_name: `J-E Rode`,
         start_url: `/`,
         background_color: `#121212`,
         theme_color: `#FFFFFF`,
