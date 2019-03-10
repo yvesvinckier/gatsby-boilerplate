@@ -1,7 +1,7 @@
 const theme = {
   colors: {
     base: '#121212', // Black
-    grey: '#9ea0a6',
+    grey: '#414141',
     white: '#FFFFFF', // White
   },
   sizes: {
