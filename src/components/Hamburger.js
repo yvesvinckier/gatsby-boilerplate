@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { TimelineLite, Power2 } from 'gsap'
+import { gsap } from 'gsap'
 
 const Toggle = styled.button`
   position: relative;
@@ -16,11 +16,11 @@ const ToggleLabel = styled.span`
   font-weight: 500;
   line-height: 3.5rem;
   height: 100%;
-  color: ${props => props.theme.colors.base};
+  color: ${(props) => props.theme.colors.base};
   max-width: 70px;
   display: none;
   opacity: 0;
-  @media screen and (min-width: ${props => props.theme.responsive.small}) {
+  @media screen and (min-width: ${(props) => props.theme.responsive.small}) {
     display: block;
     opacity: 1;
   }
@@ -33,7 +33,7 @@ const ToggleIcon = styled.div`
   span {
     position: absolute;
     display: block;
-    background: ${props => props.theme.colors.base};
+    background: ${(props) => props.theme.colors.base};
     width: 40%;
     height: 2px;
     left: 30%;
@@ -47,65 +47,61 @@ const ToggleIcon = styled.div`
 `
 
 class Hamburger extends React.Component {
-    constructor(props) {
-        super(props)
-        this.top = null
-        this.bottom = null
-        this.hamburgerAnimation = null
-    }
+  constructor(props) {
+    super(props)
+    this.top = null
+    this.bottom = null
+    this.hamburgerAnimation = null
+  }
 
-    componentDidMount() {
-        const timing = 0.3
-        this.hamburgerAnimation = new TimelineLite({ paused: true })
-            .fromTo(this.top, timing, { y: 0 }, { y: 3, ease: Power2.easeOut })
-            .fromTo(this.bottom, timing, { y: 0 }, { y: -3, ease: Power2.easeOut }, 0)
-            .fromTo(
-                this.top,
-                timing,
-                { rotation: 0 },
-                { rotation: 135, ease: Power2.easeOut },
-                0
-            )
-            .fromTo(
-                this.bottom,
-                timing,
-                { rotation: 0 },
-                { rotation: 45, ease: Power2.easeOut },
-                0
-            )
-    }
+  componentDidMount() {
+    const timing = 0.3
+    this.hamburgerAnimation = gsap
+      .timeline({
+        paused: true,
+        defaults: {
+          // children inherit these defaults
+          duration: timing,
+          ease: 'power2.out',
+        },
+      })
+      .fromTo(this.top, { y: 0 }, { y: 3 })
+      .fromTo(this.bottom, { y: 0 }, { y: -3 }, 0)
+      .fromTo(this.top, { rotation: 0 }, { rotation: 135 }, 0)
+      .fromTo(this.bottom, { rotation: 0 }, { rotation: 45 }, 0)
+  }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.opened !== this.props.opened) {
-            this.props.opened
-                ? this.hamburgerAnimation.play()
-                : this.hamburgerAnimation.reverse()
-        }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.opened !== this.props.opened) {
+      this.props.opened
+        ? this.hamburgerAnimation.play()
+        : this.hamburgerAnimation.reverse()
     }
+  }
 
-    render() {
-        const { onClick } = this.props
-        return (
-            <Toggle onClick={onClick}>
-                <ToggleLabel>Menu</ToggleLabel>
-                <ToggleIcon>
-                    <span
-                        ref={span => {
-                            this.top = span
-                        }}
-                    />
-                    <span
-                        ref={span => {
-                            this.bottom = span
-                        }}
-                    />
-                </ToggleIcon>
-            </Toggle>
-        )
-    }
+  render() {
+    const { onClick } = this.props
+    return (
+      <Toggle onClick={onClick}>
+        <ToggleLabel>Menu</ToggleLabel>
+        <ToggleIcon>
+          <span
+            ref={(span) => {
+              this.top = span
+            }}
+          />
+          <span
+            ref={(span) => {
+              this.bottom = span
+            }}
+          />
+        </ToggleIcon>
+      </Toggle>
+    )
+  }
 }
 Hamburger.propTypes = {
-    handleClick: PropTypes.func,
-    opened: PropTypes.bool,
+  handleClick: PropTypes.func,
+  opened: PropTypes.bool,
 }
 export default Hamburger
