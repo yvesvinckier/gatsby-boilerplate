@@ -49,11 +49,12 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "serve": "gatsby serve",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:css": "stylelint 'src/**/*.js'",
     "check-pretty": "prettier -l {,src/**/}*.{js,jsx,json,css,scss}",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "npm run lint:css && npm run lint:js && npm run check-pretty",
+    "test": "yarn run lint:css && yarn run lint:js && yarn run check-pretty",
     "clean": "gatsby clean"
   }
 }
